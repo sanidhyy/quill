@@ -5,7 +5,7 @@ import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 
-export default function Home() {
+const HomePage = () => {
   return (
     <>
       <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center">
@@ -165,4 +165,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default HomePage;
