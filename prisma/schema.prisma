@@ -8,11 +8,34 @@ datasource db {
 }
 
 model User {
-  id String @id @unique // matches kinde user id
+  id    String @id @unique // matches kinde user id
   email String @unique
-  
-  stripeCustomerId String? @unique @map(name: "stripe_customer_id")
-  stripeSubscriptionId String? @unique @map(name: "stripe_subscription_id")
-  stripePriceId String? @map(name: "stripe_price_id")
+
+  File File[]
+
+  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId          String?   @map(name: "stripe_price_id")
   stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+}
+
+enum UploadStatus {
+  PENDING
+  PROCESSING
+  FAILED
+  SUCCESS
+}
+
+model File {
+  if   String @id @default(cuid())
+  name String
+
+  uploadStatus UploadStatus @default(PENDING)
+  url          String
+  key          String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
 }
