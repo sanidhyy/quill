@@ -27,7 +27,7 @@ enum UploadStatus {
 }
 
 model File {
-  if   String @id @default(cuid())
+  id   String @id @default(cuid())
   name String
 
   uploadStatus UploadStatus @default(PENDING)
