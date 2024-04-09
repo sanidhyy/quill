@@ -3,7 +3,7 @@ import { TRPCError } from "@trpc/server";
 
 import { db } from "@/db";
 
-import { procedure, router } from "./trpc";
+import { privateProcedure, procedure, router } from "./trpc";
 
 export const appRouter = router({
   authCallback: procedure.query(async () => {
@@ -33,6 +33,15 @@ export const appRouter = router({
     return {
       success: true,
     };
+  }),
+  getUserFiles: privateProcedure.query(async ({ ctx }) => {
+    const { userId } = ctx;
+
+    return await db.file.findMany({
+      where: {
+        userId,
+      },
+    });
   }),
 });
 
