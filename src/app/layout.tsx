@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type { PropsWithChildren } from "react";
 
+import "react-loading-skeleton/dist/skeleton.css";
+
 import { Navbar } from "@/components/navbar";
 import { Providers } from "@/components/providers";
 import { cn } from "@/lib/utils";
