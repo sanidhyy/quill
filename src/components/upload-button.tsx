@@ -1,6 +1,6 @@
 "use client";
 
-import { Cloud, FileIcon } from "lucide-react";
+import { Cloud, FileIcon, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Dropzone from "react-dropzone";
@@ -16,9 +16,10 @@ const UploadDropzone = () => {
   const router = useRouter();
 
   const [error, setError] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
-  const { startUpload, isUploading } = useUploadThing("pdfUploader", {
+  const { startUpload } = useUploadThing("pdfUploader", {
     onUploadError: (err) => {
       if (err.code === "BAD_REQUEST") setError("Only PDF files are allowed.");
 
@@ -65,6 +66,8 @@ const UploadDropzone = () => {
       multiple={false}
       onDropRejected={() => setError("Too many files.")}
       onDrop={async (acceptedFile) => {
+        setIsUploading(true);
+
         const progressInterval = startSimulatedProgress();
 
         // handle file upload
@@ -133,6 +136,12 @@ const UploadDropzone = () => {
                     value={uploadProgress}
                     className="h-1 w-full bg-zinc-200"
                   />
+                  {uploadProgress === 100 ? (
+                    <div className="flex gap-1 items-center justify-center text-sm text-zinc-700 text-center pt-2">
+                      <Loader2 className="h-3 w-3 animate-spin" />
+                      Redirecting...
+                    </div>
+                  ) : null}
                 </div>
               ) : null}
 
