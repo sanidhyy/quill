@@ -60,6 +60,22 @@ export const appRouter = router({
 
       return file;
     }),
+  getFile: privateProcedure
+    .input(z.object({ key: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const { userId } = ctx;
+
+      const file = await db.file.findUnique({
+        where: {
+          key: input.key,
+          userId,
+        },
+      });
+
+      if (!file) throw new TRPCError({ code: "NOT_FOUND" });
+
+      return file;
+    }),
 });
 
 export type AppRouter = typeof appRouter;
