@@ -1,19 +1,38 @@
 "use client";
 
 import { Cloud, FileIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Dropzone from "react-dropzone";
+import { toast } from "sonner";
 
+import { trpc } from "@/app/_trpc/client";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useUploadThing } from "@/lib/uploadthing";
 
 const UploadDropzone = () => {
-  const [isUploading, setIsUploading] = useState(false);
+  const router = useRouter();
+
+  const [error, setError] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
+
+  const { startUpload, isUploading } = useUploadThing("pdfUploader", {
+    onUploadError: (err) => {
+      if (err.code === "BAD_REQUEST") setError("Only PDF files are allowed.");
+
+      if (err.code === "INTERNAL_SERVER_ERROR" || err.code === "TOO_LARGE")
+        setError("File is too large.");
+
+      if (err.code === "FILE_LIMIT_EXCEEDED" || err.code === "TOO_MANY_FILES")
+        setError("Too many files.");
+    },
+  });
 
   const startSimulatedProgress = () => {
     // reset upload progress
+    setError("");
     setUploadProgress(0);
 
     // update progress every half second
@@ -33,21 +52,47 @@ const UploadDropzone = () => {
     return interval;
   };
 
+  const { mutate: startPolling } = trpc.getFile.useMutation({
+    onSuccess: (file) => {
+      router.push(`/dashboard/${file.id}`);
+    },
+    retry: true,
+    retryDelay: 500,
+  });
+
   return (
     <Dropzone
       multiple={false}
+      onDropRejected={() => setError("Too many files.")}
       onDrop={async (acceptedFile) => {
-        setIsUploading(true);
-
         const progressInterval = startSimulatedProgress();
 
-        // TODO: handle file upload
+        // handle file upload
+        const res = await startUpload(acceptedFile);
+
+        if (!res) {
+          return toast.error("Something went wrong!", {
+            description: "Please try again later.",
+          });
+        }
+
+        const [fileResponse] = res;
+
+        const key = fileResponse?.key;
+
+        if (!key) {
+          return toast.error("Something went wrong!", {
+            description: "Please try again later.",
+          });
+        }
 
         clearInterval(progressInterval);
         setUploadProgress(100);
+
+        startPolling({ key });
       }}
     >
-      {({ getRootProps, getInputProps, acceptedFiles }) => (
+      {({ getRootProps, acceptedFiles }) => (
         <div
           {...getRootProps()}
           className="border h-64 m-4 border-dashed border-gray-300 rounded-lg"
@@ -89,6 +134,11 @@ const UploadDropzone = () => {
                     className="h-1 w-full bg-zinc-200"
                   />
                 </div>
+              ) : null}
+
+              {/* error */}
+              {error && error.length !== 0 ? (
+                <p className="mt-4 mx-auto text-sm text-rose-500">{error}</p>
               ) : null}
             </label>
           </div>
