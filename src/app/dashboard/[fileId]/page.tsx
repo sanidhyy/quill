@@ -31,7 +31,7 @@ const FileIdPage = async ({ params }: { params: { fileId: string } }) => {
         {/* left side */}
         <div className="flex-1 xl:flex">
           <div className="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
-            <PDFRenderer />
+            <PDFRenderer url={file.url} />
           </div>
         </div>
 
