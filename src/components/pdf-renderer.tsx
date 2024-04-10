@@ -1,20 +1,27 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronDown, ChevronUp, Loader2 } from "lucide-react";
+import { ChevronDown, ChevronUp, Loader2, Search } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Document, Page, pdfjs } from "react-pdf";
 import { useResizeDetector } from "react-resize-detector";
+import SimpleBar from "simplebar-react";
 import { toast } from "sonner";
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
-import { cn } from "@/lib/utils";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -27,6 +34,7 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
 
   const [numPages, setNumPages] = useState<number | undefined>(undefined);
   const [currPage, setCurrPage] = useState(1);
+  const [scale, setScale] = useState(1);
 
   const CustomPageValidator = z.object({
     page: z
@@ -110,29 +118,70 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
             <ChevronUp className="h-4 w-4" />
           </Button>
         </div>
+
+        <div className="space-x-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                aria-label="Zoom"
+                title="Zoom"
+                variant="ghost"
+                className="gap-1.5"
+              >
+                <Search className="h-4 w-4" />
+                {scale * 100}%
+                <ChevronDown className="h-3 w-3 opacity-50" />
+              </Button>
+            </DropdownMenuTrigger>
+
+            <DropdownMenuContent>
+              <DropdownMenuItem onSelect={() => setScale(0.8)}>
+                80%
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => setScale(1)}>
+                100%
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => setScale(1.5)}>
+                150%
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => setScale(2)}>
+                200%
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => setScale(2.5)}>
+                250%
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
 
       {/* show pdf content */}
       <div className="flex-1 w-full max-h-screen">
-        <div ref={ref}>
-          <Document
-            loading={
-              <div className="flex justify-center">
-                <Loader2 className="my-24 h-6 w-6 animate-spin" />
-              </div>
-            }
-            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-            onLoadError={() =>
-              toast.error("Error loading PDF.", {
-                description: "Please try again.",
-              })
-            }
-            file={url}
-            className="max-h-full"
-          >
-            <Page pageNumber={currPage} width={width ? width : 1} />
-          </Document>
-        </div>
+        <SimpleBar autoHide={false} className="max-h-[calc(100vh-10rem)]">
+          <div ref={ref}>
+            <Document
+              loading={
+                <div className="flex justify-center">
+                  <Loader2 className="my-24 h-6 w-6 animate-spin" />
+                </div>
+              }
+              onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+              onLoadError={() =>
+                toast.error("Error loading PDF.", {
+                  description: "Please try again.",
+                })
+              }
+              file={url}
+              className="max-h-full"
+            >
+              <Page
+                pageNumber={currPage}
+                width={width ? width : 1}
+                scale={scale}
+              />
+            </Document>
+          </div>
+        </SimpleBar>
       </div>
     </div>
   );
