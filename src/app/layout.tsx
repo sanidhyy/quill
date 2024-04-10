@@ -4,6 +4,7 @@ import type { PropsWithChildren } from "react";
 import { Toaster } from "sonner";
 
 import "react-loading-skeleton/dist/skeleton.css";
+import "simplebar-react/dist/simplebar.min.css";
 
 import { Navbar } from "@/components/navbar";
 import { Providers } from "@/components/providers";
