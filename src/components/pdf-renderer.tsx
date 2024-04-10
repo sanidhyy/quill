@@ -26,6 +26,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
+import { PdfFullscreen } from "./pdf-fullscreen";
+
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
@@ -77,9 +79,10 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
           <Button
             disabled={currPage <= 1}
             aria-disabled={currPage <= 1}
-            onClick={() =>
-              setCurrPage((prevPage) => (prevPage - 1 > 1 ? prevPage - 1 : 1))
-            }
+            onClick={() => {
+              setCurrPage((prevPage) => (prevPage - 1 > 1 ? prevPage - 1 : 1));
+              setValue("page", String(currPage - 1));
+            }}
             variant="ghost"
             aria-label="Previous Page"
             title="Previous Page"
@@ -113,11 +116,12 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
           <Button
             disabled={numPages === undefined || currPage === numPages}
             aria-disabled={numPages === undefined || currPage === numPages}
-            onClick={() =>
+            onClick={() => {
               setCurrPage((prevPage) =>
                 prevPage + 1 > numPages! ? numPages! : prevPage + 1
-              )
-            }
+              );
+              setValue("page", String(currPage + 1));
+            }}
             variant="ghost"
             aria-label="Next Page"
             title="Next Page"
@@ -168,6 +172,8 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
           >
             <RotateCw className="h-4 w-4" />
           </Button>
+
+          <PdfFullscreen fileUrl={url} />
         </div>
       </div>
 
