@@ -1,5 +1,6 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { TRPCError } from "@trpc/server";
+import { UTApi } from "uploadthing/server";
 import * as z from "zod";
 
 import { db } from "@/db";
@@ -49,7 +50,7 @@ export const appRouter = router({
     .mutation(async ({ ctx, input }) => {
       const { userId } = ctx;
 
-      const file = await db.file.delete({
+      const file = await db.file.findUnique({
         where: {
           id: input.id,
           userId,
@@ -57,6 +58,18 @@ export const appRouter = router({
       });
 
       if (!file) throw new TRPCError({ code: "NOT_FOUND" });
+
+      // delete file from db
+      await db.file.delete({
+        where: {
+          id: input.id,
+          userId,
+        },
+      });
+
+      // delete file from uploadthing
+      const utapi = new UTApi();
+      await utapi.deleteFiles(file.key);
 
       return file;
     }),
