@@ -1,7 +1,12 @@
-import { db } from "@/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { PDFLoader } from "langchain/document_loaders/fs/pdf";
+import { OpenAIEmbeddings } from "@langchain/openai";
+import { PineconeStore } from "@langchain/pinecone";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
+
+import { db } from "@/db";
+import { getPineconeClient } from "@/lib/pinecone";
 
 const f = createUploadthing();
 
@@ -15,11 +20,8 @@ export const ourFileRouter = {
 
       return { userId: user.id };
     })
-    .onUploadError((error) => {
-      return error;
-    })
     .onUploadComplete(async ({ metadata, file }) => {
-      await db.file.create({
+      const createdFile = await db.file.create({
         data: {
           key: file.key,
           name: file.name,
@@ -28,6 +30,53 @@ export const ourFileRouter = {
           uploadStatus: "PROCESSING",
         },
       });
+
+      try {
+        const response = await fetch(createdFile.url);
+        const blob = await response.blob();
+
+        // load pdf into memory
+        const loader = new PDFLoader(blob);
+
+        // extract pdf page level text
+        const pageLevelDocs = await loader.load();
+
+        // pdf page length
+        const pageAmt = pageLevelDocs.length;
+
+        // vectorize and index entire document
+        const pinecone = getPineconeClient();
+        const pineconeIndex = pinecone.Index("quill");
+
+        const embeddings = new OpenAIEmbeddings({
+          openAIApiKey: process.env.OPENAI_API_KEY!,
+        });
+
+        await PineconeStore.fromDocuments(pageLevelDocs, embeddings, {
+          pineconeIndex,
+          namespace: createdFile.id,
+        });
+
+        await db.file.update({
+          data: {
+            uploadStatus: "SUCCESS",
+          },
+          where: {
+            id: createdFile.id,
+            userId: metadata.userId,
+          },
+        });
+      } catch (error) {
+        await db.file.update({
+          data: {
+            uploadStatus: "FAILED",
+          },
+          where: {
+            id: createdFile.id,
+            userId: metadata.userId,
+          },
+        });
+      }
     }),
 } satisfies FileRouter;
 
