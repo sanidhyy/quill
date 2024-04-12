@@ -7,6 +7,7 @@ import { UploadThingError } from "uploadthing/server";
 
 import { db } from "@/db";
 import { getPineconeClient } from "@/lib/pinecone";
+import { File } from "@prisma/client";
 
 const f = createUploadthing();
 
@@ -21,15 +22,27 @@ export const ourFileRouter = {
       return { userId: user.id };
     })
     .onUploadComplete(async ({ metadata, file }) => {
-      const createdFile = await db.file.create({
-        data: {
+      let createdFile: File | null;
+
+      createdFile = await db.file.findFirst({
+        where: {
           key: file.key,
-          name: file.name,
           userId: metadata.userId,
-          url: `https://utfs.io/f/${file.key}`,
-          uploadStatus: "PROCESSING",
         },
       });
+
+      // Check if the file is already processed
+      if (!createdFile) {
+        createdFile = await db.file.create({
+          data: {
+            key: file.key,
+            name: file.name,
+            userId: metadata.userId,
+            url: `https://utfs.io/f/${file.key}`,
+            uploadStatus: "PROCESSING",
+          },
+        });
+      }
 
       try {
         const response = await fetch(createdFile.url);
