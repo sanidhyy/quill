@@ -16,6 +16,9 @@ declare global {
 
       // pinecone api key
       PINECONE_API_KEY: string;
+
+      // openai api key
+      OPENAI_API_KEY: string;
     }
   }
 }
