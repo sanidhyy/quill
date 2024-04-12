@@ -132,6 +132,7 @@ export const appRouter = router({
         take: limit + 1,
         where: {
           fileId,
+          userId,
         },
         orderBy: {
           createdAt: "desc",
