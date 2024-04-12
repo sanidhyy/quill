@@ -112,7 +112,7 @@ const PricingPage = async () => {
 
                     <p className="text-gray-600">{tagline}</p>
                     <p className="my-5 font-display text-6xl font-semibold">
-                      $${price}
+                      ${price.toFixed(2)}
                     </p>
                     <p className="text-gray-500">per month</p>
                   </div>
@@ -140,7 +140,7 @@ const PricingPage = async () => {
                           {negative ? (
                             <Minus className="h-6 w-6 text-gray-300" />
                           ) : (
-                            <Check className="h-6 w-6 text-blue-300" />
+                            <Check className="h-6 w-6 text-blue-500" />
                           )}
                         </div>
 
