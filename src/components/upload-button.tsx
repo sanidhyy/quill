@@ -21,6 +21,7 @@ const UploadDropzone = () => {
 
   const { startUpload } = useUploadThing("pdfUploader", {
     onUploadError: (err) => {
+      setIsUploading(false);
       if (err.code === "BAD_REQUEST") setError("Only PDF files are allowed.");
 
       if (err.code === "INTERNAL_SERVER_ERROR" || err.code === "TOO_LARGE")
@@ -55,6 +56,7 @@ const UploadDropzone = () => {
 
   const { mutate: startPolling } = trpc.getFile.useMutation({
     onSuccess: (file) => {
+      console.log("Success");
       router.push(`/dashboard/${file.id}`);
     },
     retry: true,
