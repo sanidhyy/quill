@@ -33,7 +33,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
           )}
         >
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-          <Toaster richColors closeButton />
+          <Toaster richColors />
 
           <Navbar />
           {children}
