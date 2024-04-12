@@ -49,6 +49,7 @@
     "react-textarea-autosize": "^8.5.3",
     "simplebar-react": "^3.2.4",
     "sonner": "^1.4.41",
+    "stripe": "^15.1.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.9.0",
