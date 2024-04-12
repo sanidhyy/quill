@@ -32,8 +32,8 @@ model File {
   name String
 
   uploadStatus UploadStatus @default(PENDING)
-  url          String       @unique
-  key          String       @unique
+  url          String
+  key          String
 
   messages Message[]
 
