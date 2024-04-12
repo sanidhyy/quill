@@ -3,7 +3,7 @@ import { TRPCError } from "@trpc/server";
 import { UTApi } from "uploadthing/server";
 import * as z from "zod";
 
-import { INFINITE_QUERY_LIMIT } from "@/app/config/infinite-query";
+import { INFINITE_QUERY_LIMIT } from "@/config/infinite-query";
 import { db } from "@/db";
 
 import { privateProcedure, procedure, router } from "./trpc";
