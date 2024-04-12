@@ -122,7 +122,7 @@ const PricingPage = async () => {
                       <p>{quota.toLocaleString()} PDFs/mo included</p>
 
                       <Tooltip delayDuration={300}>
-                        <TooltipTrigger className="cursor-default ml-1.5">
+                        <TooltipTrigger className="cursor-default pl-0.5">
                           <HelpCircle className="h-4 w-4 text-zinc-500" />
                         </TooltipTrigger>
 
@@ -155,7 +155,7 @@ const PricingPage = async () => {
                             </p>
 
                             <Tooltip delayDuration={300}>
-                              <TooltipTrigger className="cursor-default ml-1.5">
+                              <TooltipTrigger className="cursor-default ml-2">
                                 <HelpCircle className="h-4 w-4 text-zinc-500" />
                               </TooltipTrigger>
 
@@ -186,8 +186,8 @@ const PricingPage = async () => {
                           className: "w-full",
                         })}
                       >
-                        {user ? "Upgrade now" : "Sign up"}{" "}
-                        <ArrowRight className="h-5 w-5 mr-1.5" />
+                        {user ? "Get started" : "Sign up"}{" "}
+                        <ArrowRight className="h-5 w-5 ml-1.5" />
                       </Link>
                     ) : user ? (
                       <UpgradeButton />
@@ -199,7 +199,7 @@ const PricingPage = async () => {
                         })}
                       >
                         {user ? "Upgrade now" : "Sign up"}{" "}
-                        <ArrowRight className="h-5 w-5 mr-1.5" />
+                        <ArrowRight className="h-5 w-5 ml-1.5" />
                       </Link>
                     )}
                   </div>
