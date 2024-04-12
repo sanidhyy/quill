@@ -13,6 +13,7 @@
     "@kinde-oss/kinde-auth-nextjs": "^2.2.3",
     "@langchain/openai": "^0.0.28",
     "@langchain/pinecone": "^0.0.4",
+    "@mantine/hooks": "^7.8.0",
     "@pinecone-database/pinecone": "^2.2.0",
     "@prisma/client": "^5.12.1",
     "@radix-ui/react-dialog": "^1.0.5",
