@@ -19,6 +19,9 @@ declare global {
 
       // openai api key
       OPENAI_API_KEY: string;
+
+      // stripe price id
+      STRIPE_PRICE_ID: string;
     }
   }
 }
