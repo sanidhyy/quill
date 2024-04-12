@@ -203,7 +203,11 @@ export const ChatContextProvider = ({
     setMessage(e.target.value);
   };
 
-  const addMessage = () => sendMessage({ message });
+  const addMessage = () => {
+    if (message.trim().length === 0) return;
+
+    sendMessage({ message });
+  };
 
   return (
     <ChatContext.Provider
