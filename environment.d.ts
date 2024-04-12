@@ -13,6 +13,9 @@ declare global {
 
       // app base url
       NEXT_PUBLIC_BASE_URL: string;
+
+      // pinecone api key
+      PINECONE_API_KEY: string;
     }
   }
 }
