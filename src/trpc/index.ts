@@ -79,7 +79,7 @@ export const appRouter = router({
     .mutation(async ({ ctx, input }) => {
       const { userId } = ctx;
 
-      const file = await db.file.findFirst({
+      const file = await db.file.findUnique({
         where: {
           key: input.key,
           userId,

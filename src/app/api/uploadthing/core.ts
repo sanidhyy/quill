@@ -24,7 +24,7 @@ export const ourFileRouter = {
     .onUploadComplete(async ({ metadata, file }) => {
       let createdFile: File | null;
 
-      createdFile = await db.file.findFirst({
+      createdFile = await db.file.findUnique({
         where: {
           key: file.key,
           userId: metadata.userId,
