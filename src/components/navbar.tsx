@@ -11,6 +11,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { MaxWidthWrapper } from "./max-width-wrapper";
 import { MobileNav } from "./mobile-nav";
 import { UserAccountNav } from "./user-account-nav";
+import { SOURCE_CODE } from "@/config/links";
+import Image from "next/image";
 
 export const Navbar = async () => {
   const { getUser } = getKindeServerSession();
@@ -24,60 +26,66 @@ export const Navbar = async () => {
             <span>quill.</span>
           </Link>
 
-          <MobileNav isAuth={!!user} />
+          <div className="flex items-center justify-center space-x-4">
+            <MobileNav isAuth={!!user} />
 
-          <div className="hidden items-center space-x-4 sm:flex">
-            {!user ? (
-              <>
-                <Link
-                  href="/pricing"
-                  className={buttonVariants({
-                    variant: "ghost",
-                    size: "sm",
-                  })}
-                >
-                  Pricing
-                </Link>
+            <div className="hidden sm:flex">
+              {!user ? (
+                <>
+                  <Link
+                    href="/pricing"
+                    className={buttonVariants({
+                      variant: "ghost",
+                      size: "sm",
+                    })}
+                  >
+                    Pricing
+                  </Link>
 
-                <LoginLink
-                  className={buttonVariants({
-                    variant: "ghost",
-                    size: "sm",
-                  })}
-                >
-                  Sign in
-                </LoginLink>
-                <RegisterLink
-                  className={buttonVariants({
-                    size: "sm",
-                  })}
-                >
-                  Get started <ArrowRight className="ml-1.5 h-5 w-5" />
-                </RegisterLink>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/dashboard"
-                  className={buttonVariants({
-                    variant: "ghost",
-                    size: "sm",
-                  })}
-                >
-                  Dashboard
-                </Link>
+                  <LoginLink
+                    className={buttonVariants({
+                      variant: "ghost",
+                      size: "sm",
+                    })}
+                  >
+                    Sign in
+                  </LoginLink>
+                  <RegisterLink
+                    className={buttonVariants({
+                      size: "sm",
+                    })}
+                  >
+                    Get started <ArrowRight className="ml-1.5 h-5 w-5" />
+                  </RegisterLink>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className={buttonVariants({
+                      variant: "ghost",
+                      size: "sm",
+                    })}
+                  >
+                    Dashboard
+                  </Link>
 
-                <UserAccountNav
-                  name={
-                    !user.given_name || !user.family_name
-                      ? "Your Account"
-                      : `${user.given_name} ${user.family_name}`
-                  }
-                  email={user.email ?? ""}
-                  imageUrl={user.picture ?? ""}
-                />
-              </>
-            )}
+                  <UserAccountNav
+                    name={
+                      !user.given_name || !user.family_name
+                        ? "Your Account"
+                        : `${user.given_name} ${user.family_name}`
+                    }
+                    email={user.email ?? ""}
+                    imageUrl={user.picture ?? ""}
+                  />
+                </>
+              )}
+            </div>
+
+            <Link href={SOURCE_CODE} target="_blank" rel="noreferrer noopener">
+              <Image src="/github.svg" alt="GitHub" height={25} width={25} />
+            </Link>
           </div>
         </div>
       </MaxWidthWrapper>
