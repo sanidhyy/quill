@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { Expand, Loader2 } from "lucide-react";
-import SimpleBar from "simplebar-react";
+import { useState } from "react";
 import { Document, Page } from "react-pdf";
-import { toast } from "sonner";
 import { useResizeDetector } from "react-resize-detector";
+import SimpleBar from "simplebar-react";
+import { toast } from "sonner";
+
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 type PdfFullscreenProps = {
   fileUrl: string;
