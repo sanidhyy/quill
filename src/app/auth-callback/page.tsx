@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { trpc } from "../_trpc/client";
 
-export enum TErrCodes {
+enum TErrCodes {
   UNAUTHORIZED,
 }
 
