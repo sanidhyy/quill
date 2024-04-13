@@ -20,9 +20,10 @@ declare global {
       // openai api key
       OPENAI_API_KEY: string;
 
-      // stripe secret key and price id
+      // stripe secret key, price id and webhook secret
       STRIPE_SECRET_KEY: string;
       STRIPE_PRICE_ID: string;
+      STRIPE_WEBHOOK_SECRET: string;
     }
   }
 }
