@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 
 import { Dashboard } from "@/components/dashboard";
 import { db } from "@/db";
+import { getUserSubscriptionPlan } from "@/lib/stripe";
 
 const DashboardPage = async () => {
   const { getUser } = getKindeServerSession();
@@ -18,7 +19,9 @@ const DashboardPage = async () => {
 
   if (!dbUser) redirect("/auth-callback?origin=dashboard");
 
-  return <Dashboard />;
+  const subscriptionPlan = await getUserSubscriptionPlan();
+
+  return <Dashboard subscriptionPlan={subscriptionPlan} />;
 };
 
 export default DashboardPage;

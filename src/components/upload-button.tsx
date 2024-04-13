@@ -12,25 +12,28 @@ import { Progress } from "@/components/ui/progress";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useUploadThing } from "@/lib/uploadthing";
 
-const UploadDropzone = () => {
+const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
   const router = useRouter();
 
   const [error, setError] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
-  const { startUpload } = useUploadThing("pdfUploader", {
-    onUploadError: (err) => {
-      setIsUploading(false);
-      if (err.code === "BAD_REQUEST") setError("Only PDF files are allowed.");
+  const { startUpload } = useUploadThing(
+    isSubscribed ? "proPlanUploader" : "freePlanUploader",
+    {
+      onUploadError: (err) => {
+        setIsUploading(false);
+        if (err.code === "BAD_REQUEST") setError("Only PDF files are allowed.");
 
-      if (err.code === "INTERNAL_SERVER_ERROR" || err.code === "TOO_LARGE")
-        setError("File is too large.");
+        if (err.code === "INTERNAL_SERVER_ERROR" || err.code === "TOO_LARGE")
+          setError("File is too large.");
 
-      if (err.code === "FILE_LIMIT_EXCEEDED" || err.code === "TOO_MANY_FILES")
-        setError("Too many files.");
-    },
-  });
+        if (err.code === "FILE_LIMIT_EXCEEDED" || err.code === "TOO_MANY_FILES")
+          setError("Too many files.");
+      },
+    }
+  );
 
   const startSimulatedProgress = () => {
     // reset upload progress
@@ -113,7 +116,9 @@ const UploadDropzone = () => {
                   and drop.
                 </p>
 
-                <p className="text-xs text-zinc-500">PDF (up to 4MB)</p>
+                <p className="text-xs text-zinc-500">
+                  PDF (up to {isSubscribed ? "16" : "4"}MB)
+                </p>
               </div>
 
               {/* render uploaded files */}
@@ -161,7 +166,7 @@ const UploadDropzone = () => {
   );
 };
 
-export const UploadButton = () => {
+export const UploadButton = ({ isSubscribed }: { isSubscribed: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -176,7 +181,7 @@ export const UploadButton = () => {
       </DialogTrigger>
 
       <DialogContent>
-        <UploadDropzone />
+        <UploadDropzone isSubscribed={isSubscribed} />
       </DialogContent>
     </Dialog>
   );
