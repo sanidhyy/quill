@@ -1,8 +1,8 @@
 <a name="readme-top"></a>
 
-# Quill - the SaaS for students
+# Quill - The SaaS for Students
 
-![Quill - the SaaS for students](/.github/images/img_main.png "Quill - the SaaS for students")
+![Quill - The SaaS for Students](/.github/images/img_main.png "Quill - The SaaS for Students")
 
 [![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy "Ask Me Anything!")
 [![GitHub license](https://flat.badgen.net/github/license/sanidhyy/quill?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/quill/blob/main/LICENSE "GitHub license")
