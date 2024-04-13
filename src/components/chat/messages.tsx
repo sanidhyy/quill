@@ -22,7 +22,7 @@ export const Messages = ({ fileId }: { fileId: string }) => {
       {
         getNextPageParam: (lastPage) => lastPage?.nextCursor,
         placeholderData: keepPreviousData,
-      }
+      },
     );
 
   const messages = data?.pages.flatMap((page) => page.messages);

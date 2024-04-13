@@ -41,7 +41,7 @@ const UploadDropzone = ({
         if (err.code === "FILE_LIMIT_EXCEEDED" || err.code === "TOO_MANY_FILES")
           setError("Too many files.");
       },
-    }
+    },
   );
 
   const startSimulatedProgress = () => {

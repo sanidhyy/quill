@@ -30,7 +30,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
         <body
           className={cn(
             "min-h-screen font-sans antialiased grainy",
-            inter.className
+            inter.className,
           )}
         >
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />

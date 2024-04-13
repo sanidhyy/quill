@@ -99,7 +99,7 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
               {...register("page")}
               className={cn(
                 "w-12 h-8",
-                errors.page && "focus-visible:ring-red-500"
+                errors.page && "focus-visible:ring-red-500",
               )}
               aria-label="Page number"
               onKeyDown={(e) => {
@@ -121,7 +121,7 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
             aria-disabled={numPages === undefined || currPage === numPages}
             onClick={() => {
               setCurrPage((prevPage) =>
-                prevPage + 1 > numPages! ? numPages! : prevPage + 1
+                prevPage + 1 > numPages! ? numPages! : prevPage + 1,
               );
               setValue("page", String(currPage + 1));
             }}

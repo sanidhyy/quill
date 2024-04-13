@@ -25,7 +25,7 @@ export const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
     {
       refetchInterval: () =>
         status === "SUCCESS" || status === "FAILED" ? false : 500,
-    }
+    },
   );
 
   useEffect(() => {

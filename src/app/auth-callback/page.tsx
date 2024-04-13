@@ -26,7 +26,7 @@ const AuthCallbackPage = () => {
       router.push(
         data !== undefined && data.success && origin
           ? `${origin}`
-          : "/dashboard"
+          : "/dashboard",
       );
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

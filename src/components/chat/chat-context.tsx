@@ -93,7 +93,7 @@ export const ChatContextProvider = ({
             ...old,
             pages: newPages,
           };
-        }
+        },
       );
 
       setIsLoading(true);
@@ -139,8 +139,8 @@ export const ChatContextProvider = ({
             // check if message is already created
             let isAiResponseCreated = old.pages.some((page) =>
               page.messages.some(
-                (message) => message.id === AI_RESPONSE_MESSAGE_ID
-              )
+                (message) => message.id === AI_RESPONSE_MESSAGE_ID,
+              ),
             );
 
             let updatedPages = old.pages.map((page) => {
@@ -181,7 +181,7 @@ export const ChatContextProvider = ({
             });
 
             return { ...old, pages: updatedPages };
-          }
+          },
         );
       }
     },
@@ -189,7 +189,7 @@ export const ChatContextProvider = ({
       setMessage(backupMessage.current);
       utils.getFileMessages.setData(
         { fileId },
-        { messages: context?.previousMessages ?? [] }
+        { messages: context?.previousMessages ?? [] },
       );
     },
     onSettled: async () => {

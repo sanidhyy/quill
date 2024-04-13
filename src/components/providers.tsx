@@ -21,7 +21,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
             if (query.meta?.errCode === "UNAUTHORIZED") router.push("/sign-in");
           },
         }),
-      })
+      }),
   );
 
   const [trpcClient] = useState(() =>
@@ -31,7 +31,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
           url: "/api/trpc",
         }),
       ],
-    })
+    }),
   );
 
   return (

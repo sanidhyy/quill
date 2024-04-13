@@ -42,7 +42,7 @@ export const Dashboard = ({ subscriptionPlan }: DashboardProps) => {
               .sort(
                 (a, b) =>
                   new Date(b.createdAt).getTime() -
-                  new Date(a.createdAt).getTime()
+                  new Date(a.createdAt).getTime(),
               )
               .map((file) => (
                 <li

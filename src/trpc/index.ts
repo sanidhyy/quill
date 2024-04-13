@@ -122,7 +122,7 @@ export const appRouter = router({
         limit: z.number().min(1).max(100).nullish(),
         cursor: z.string().nullish(),
         fileId: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const { userId } = ctx;
