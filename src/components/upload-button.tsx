@@ -2,7 +2,7 @@
 
 import { Cloud, FileIcon, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { type Dispatch, type SetStateAction, useState } from "react";
 import Dropzone from "react-dropzone";
 import { toast } from "sonner";
 
@@ -12,11 +12,20 @@ import { Progress } from "@/components/ui/progress";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useUploadThing } from "@/lib/uploadthing";
 
-const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
+type UploadDropzoneProps = {
+  isSubscribed: boolean;
+  isUploading: boolean;
+  setIsUploading: Dispatch<SetStateAction<boolean>>;
+};
+
+const UploadDropzone = ({
+  isSubscribed,
+  isUploading,
+  setIsUploading,
+}: UploadDropzoneProps) => {
   const router = useRouter();
 
   const [error, setError] = useState("");
-  const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
   const { startUpload } = useUploadThing(
@@ -168,20 +177,30 @@ const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
 
 export const UploadButton = ({ isSubscribed }: { isSubscribed: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
 
   return (
     <Dialog
-      open={isOpen}
+      open={isOpen || isUploading}
       onOpenChange={(v) => {
         if (!v) setIsOpen(v);
       }}
     >
       <DialogTrigger onClick={() => setIsOpen(true)} asChild>
-        <Button>Upload PDF</Button>
+        <Button
+          disabled={isOpen || isUploading}
+          aria-disabled={isOpen || isUploading}
+        >
+          Upload PDF
+        </Button>
       </DialogTrigger>
 
       <DialogContent>
-        <UploadDropzone isSubscribed={isSubscribed} />
+        <UploadDropzone
+          isSubscribed={isSubscribed}
+          isUploading={isUploading}
+          setIsUploading={setIsUploading}
+        />
       </DialogContent>
     </Dialog>
   );
