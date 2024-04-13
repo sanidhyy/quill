@@ -9,6 +9,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 
 import { MaxWidthWrapper } from "./max-width-wrapper";
+import { MobileNav } from "./mobile-nav";
 import { UserAccountNav } from "./user-account-nav";
 
 export const Navbar = async () => {
@@ -23,7 +24,7 @@ export const Navbar = async () => {
             <span>quill.</span>
           </Link>
 
-          {/* TODO: add mobile navbar */}
+          <MobileNav isAuth={!!user} />
 
           <div className="hidden items-center space-x-4 sm:flex">
             {!user ? (
