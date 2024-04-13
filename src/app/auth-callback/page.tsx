@@ -43,10 +43,10 @@ const AuthCallbackLoading = () => {
   );
 };
 
-const AuthCallbackPage = () => {
+const AuthCallbackPage = () => (
   <React.Suspense>
     <AuthCallbackLoading />
-  </React.Suspense>;
-};
+  </React.Suspense>
+);
 
 export default AuthCallbackPage;
