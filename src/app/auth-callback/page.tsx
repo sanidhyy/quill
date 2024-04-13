@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { trpc } from "../_trpc/client";
 
-export const enum TErrCodes {
+export enum TErrCodes {
   UNAUTHORIZED,
 }
 
@@ -26,7 +26,7 @@ const AuthCallbackPage = () => {
       router.push(
         data !== undefined && data.success && origin
           ? `${origin}`
-          : "/dashboard",
+          : "/dashboard"
       );
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
