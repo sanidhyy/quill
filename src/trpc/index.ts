@@ -192,7 +192,8 @@ export const appRouter = router({
       cancel_url: billingUrl,
       payment_method_types: ["card"],
       mode: "subscription",
-      billing_address_collection: "auto",
+      customer_email: dbUser.email,
+      billing_address_collection: "required",
       line_items: [
         {
           price: PLANS.find((plan) => plan.name === "Pro")?.price.priceIds.test,
