@@ -82,7 +82,7 @@ export const Dashboard = ({ subscriptionPlan }: DashboardProps) => {
 
                   <div className="flex items-center gap-2">
                     <MessageSquare className="h-4 w-4" />
-                    {/* TODO: No of messages */}0
+                    {file._count.messages}
                   </div>
 
                   <Button
