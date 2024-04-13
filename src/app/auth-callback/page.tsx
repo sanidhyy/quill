@@ -1,16 +1,16 @@
 "use client";
 
 import { Loader2 } from "lucide-react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import { trpc } from "../_trpc/client";
+import { trpc } from "@/app/_trpc/client";
 
 enum TErrCodes {
   UNAUTHORIZED,
 }
 
-const AuthCallbackPage = () => {
+const AuthCallbackLoading = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -41,6 +41,12 @@ const AuthCallbackPage = () => {
       </div>
     </div>
   );
+};
+
+const AuthCallbackPage = () => {
+  <React.Suspense>
+    <AuthCallbackLoading />
+  </React.Suspense>;
 };
 
 export default AuthCallbackPage;
