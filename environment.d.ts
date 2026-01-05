@@ -7,9 +7,8 @@ declare global {
       // neon db uri
       DATABASE_URL: string;
 
-      // uploadthing api key and app id
-      UPLOADTHING_SECRET: string;
-      UPLOADTHING_APP_ID: string;
+      // uploadthing token
+      UPLOADTHING_TOKEN: string;
 
       // app base url
       NEXT_PUBLIC_BASE_URL: string;
