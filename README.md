@@ -135,9 +135,8 @@ KINDE_POST_LOGIN_REDIRECT_URL=http://localhost:3000/dashboard
 # neon db uri
 DATABASE_URL="postgresql://<user>:<password>@<hostname>:<port>/quill?sslmode=require"
 
-# uploadthing api key and app id
-UPLOADTHING_SECRET=sk_live_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-UPLOADTHING_APP_ID=xxxxxxxxxxx
+# uploadthing token
+UPLOADTHING_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 # app base url
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
@@ -196,12 +195,11 @@ STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ### 8. Uploadthing
 
 - **Environment Variables**:
-  - `UPLOADTHING_SECRET`
-  - `UPLOADTHING_APP_ID`
+  - `UPLOADTHING_TOKEN`
 - **Instructions**:
-  - Visit the Uploadthing developer dashboard or website.
-  - Log in to your account and navigate to the API or application settings.
-  - Retrieve `UPLOADTHING_SECRET` and `UPLOADTHING_APP_ID`.
+  - Visit the Uploadthing developer dashboard and Log in to your account.
+  - Create a new application and navigate to the API key section and generate a token.
+  - Retrieve `UPLOADTHING_TOKEN`.
 
 ### 9. App Base URL
 
