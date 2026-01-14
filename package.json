@@ -100,7 +100,7 @@
     "@uploadthing/react": "^7.3.3",
     "ai": "^3.0.21",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "langchain": "^0.1.33",
     "lucide-react": "^0.364.0",
