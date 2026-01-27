@@ -117,7 +117,7 @@
     "react-pdf": "^10.3.0",
     "react-resize-detector": "^12.3.0",
     "react-textarea-autosize": "^8.5.9",
-    "simplebar-react": "^3.2.4",
+    "simplebar-react": "^3.3.2",
     "sonner": "^1.4.41",
     "stripe": "^15.1.0",
     "tailwind-merge": "^2.2.2",
