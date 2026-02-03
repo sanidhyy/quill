@@ -112,7 +112,7 @@
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.51.2",
-    "react-loading-skeleton": "^3.4.0",
+    "react-loading-skeleton": "^3.5.0",
     "react-markdown": "^9.0.1",
     "react-pdf": "^10.3.0",
     "react-resize-detector": "^12.3.0",
