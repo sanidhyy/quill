@@ -1,6 +1,8 @@
 import { AppRouter } from "@/trpc";
 import { inferRouterOutputs } from "@trpc/server";
 
+import type { JSX } from "react";
+
 type RouterOutput = inferRouterOutputs<AppRouter>;
 
 export type Messages = RouterOutput["getFileMessages"]["messages"];

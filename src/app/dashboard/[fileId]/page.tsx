@@ -5,7 +5,8 @@ import { ChatWrapper } from "@/components/chat/chat-wrapper";
 import { PDFRenderer } from "@/components/pdf-renderer";
 import { db } from "@/db";
 
-const FileIdPage = async ({ params }: { params: { fileId: string } }) => {
+const FileIdPage = async (props: { params: Promise<{ fileId: string }> }) => {
+  const params = await props.params;
   // retrieve file id
   const { fileId } = params;
 
