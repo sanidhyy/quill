@@ -95,7 +95,7 @@ quill/
     |-- types/
         |--- message.ts
     |-- middleware.ts
-  |- .env
+  |- .env.local
   |- .env.example
   |- .eslintrc.js
   |- .gitignore
@@ -115,11 +115,11 @@ quill/
 
 1. Make sure **Git** and **NodeJS** is installed.
 2. Clone this repository to your local computer.
-3. Create `.env` file in **root** directory.
-4. Contents of `.env`:
+3. Create `.env.local` file in **root** directory.
+4. Contents of `.env.local`:
 
 ```env
-# .env
+# .env.local
 
 # disabled next.js telemetry
 NEXT_TELEMETRY_DISABLED=1
@@ -160,7 +160,7 @@ STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 - **Environment Variable**: `NEXT_TELEMETRY_DISABLED=1`
 - **Instructions**:
   - Open your Next.js project.
-  - Locate the `.env` file.
+  - Locate the `.env.local` file.
   - Add or update the line `NEXT_TELEMETRY_DISABLED=1` to disable Next.js telemetry.
 
 ### 6. Kinde
@@ -205,7 +205,7 @@ STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 - **Environment Variable**: `NEXT_PUBLIC_BASE_URL=http://localhost:3000`
 - **Instructions**:
-  - Simply set `NEXT_PUBLIC_BASE_URL=http://localhost:3000` in your `.env` file.
+  - Simply set `NEXT_PUBLIC_BASE_URL=http://localhost:3000` in your `.env.local` file.
 
 ### 10. Pinecone API Key
 
