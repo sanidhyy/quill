@@ -1,6 +1,6 @@
 "use client";
 
-import type { UploadStatus } from "@prisma/client";
+import type { UploadStatus } from "@/generated/prisma/enums";
 import { ChevronLeft, Loader2, XCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";

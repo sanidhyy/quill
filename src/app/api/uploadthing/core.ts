@@ -7,7 +7,7 @@ import { UploadThingError } from "uploadthing/server";
 
 import { db } from "@/db";
 import { getPineconeClient } from "@/lib/pinecone";
-import { File } from "@prisma/client";
+import { File } from "@/generated/prisma/client";
 import { getUserSubscriptionPlan } from "@/lib/stripe";
 import { PLANS } from "@/config/stripe";
 
