@@ -1,11 +1,11 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { openai as openaiProvider } from "@ai-sdk/openai";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PineconeStore } from "@langchain/pinecone";
-import { OpenAIStream, StreamingTextResponse } from "ai";
+import { streamText } from "ai";
 import { NextResponse, type NextRequest } from "next/server";
 
 import { db } from "@/db";
-import { openai } from "@/lib/openai";
 import { getPineconeClient } from "@/lib/pinecone";
 import { sendMessageValidator } from "@/lib/validators/send-message-validator";
 
@@ -72,16 +72,12 @@ export async function POST(req: NextRequest) {
     content: msg.text,
   }));
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+  const result = streamText({
+    model: openaiProvider("gpt-3.5-turbo"),
     temperature: 0,
-    stream: true,
+    system:
+      "Use the following pieces of context (or previous conversaton if needed) to answer the users question in markdown format.",
     messages: [
-      {
-        role: "system",
-        content:
-          "Use the following pieces of context (or previous conversaton if needed) to answer the users question in markdown format.",
-      },
       {
         role: "user",
         content: `Use the following pieces of context (or previous conversaton if needed) to answer the users question in markdown format. \nIf you don't know the answer, just say that you don't know, don't try to make up an answer.
@@ -102,10 +98,7 @@ export async function POST(req: NextRequest) {
   USER INPUT: ${message}`,
       },
     ],
-  });
-
-  const stream = OpenAIStream(response, {
-    async onCompletion(completion) {
+    async onFinish({ text: completion }) {
       await db.message.create({
         data: {
           text: completion,
@@ -117,5 +110,5 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  return new StreamingTextResponse(stream);
+  return result.toTextStreamResponse();
 }

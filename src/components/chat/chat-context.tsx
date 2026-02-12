@@ -125,10 +125,7 @@ export const ChatContextProvider = ({
 
         const chunkValue = decoder.decode(value);
 
-        // Extract the string value from the chunk
-        const extractedValue = chunkValue.match(/"([^"]+)"/)?.[1] || "";
-
-        accResponse += extractedValue;
+        accResponse += chunkValue;
 
         // append chunk to the actual message
         utils.getFileMessages.setInfiniteData(
