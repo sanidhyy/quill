@@ -100,7 +100,7 @@
     "@trpc/server": "^11.9.0",
     "@uploadthing/react": "^7.3.3",
     "ai": "^6.0.81",
-    "class-variance-authority": "^0.7.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "langchain": "^0.1.33",
