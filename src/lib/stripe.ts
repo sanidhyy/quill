@@ -5,7 +5,7 @@ import { PLANS } from "@/config/stripe";
 import { db } from "@/db";
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
-  apiVersion: "2024-04-10",
+  apiVersion: "2026-01-28.clover",
   typescript: true,
 });
 
@@ -39,8 +39,8 @@ export async function getUserSubscriptionPlan() {
 
   const isSubscribed = Boolean(
     dbUser.stripePriceId &&
-      dbUser.stripeCurrentPeriodEnd && // 86400000 = 1 day
-      dbUser.stripeCurrentPeriodEnd.getTime() + 86_400_000 > Date.now(),
+    dbUser.stripeCurrentPeriodEnd && // 86400000 = 1 day
+    dbUser.stripeCurrentPeriodEnd.getTime() + 86_400_000 > Date.now(),
   );
 
   const plan = isSubscribed
