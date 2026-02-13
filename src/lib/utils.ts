@@ -84,7 +84,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@sanidhyyy",
+      creator: "@_sanidhyy",
     },
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
     ...(noIndex && {
