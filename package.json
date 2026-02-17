@@ -83,7 +83,7 @@
     }
   ],
   "dependencies": {
-    "@ai-sdk/openai": "^3.0.27",
+    "@ai-sdk/openai": "^3.0.29",
     "@hookform/resolvers": "^3.3.4",
     "@kinde-oss/kinde-auth-nextjs": "^2.11.0",
     "@langchain/openai": "^0.0.28",
