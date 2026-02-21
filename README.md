@@ -43,6 +43,8 @@
 
 Here is the folder structure of this app.
 
+<!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 quill/
   |- prisma/
@@ -108,6 +110,8 @@ quill/
   |- tailwind.config.ts
   |- tsconfig.json
 ```
+
+<!--- FOLDER_STRUCTURE_END --->
 
 <br />
 
@@ -267,6 +271,8 @@ You might encounter some bugs while using this app. You are more than welcome to
 
 Useful resources and dependencies that are used in quill.
 
+<!--- DEPENDENCIES_START --->
+
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.3.4
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.2.3
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
@@ -323,6 +329,7 @@ Useful resources and dependencies that are used in quill.
 - [prisma](https://www.npmjs.com/package/prisma): ^5.12.1
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [typescript](https://www.npmjs.com/package/typescript): ^5
+<!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
 
