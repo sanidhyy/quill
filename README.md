@@ -44,73 +44,35 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 quill/
   |- prisma/
-    |- schema.prisma
+    |-- schema.prisma
   |- public/
   |- src/
     |-- app/
-        |--- _trpc/
-        |--- api/
-        |--- auth-callback/
-        |--- dashboard/
-        |--- pricing/
-        |--- favicon.ico
-        |--- globals.css
-        |--- layout.tsx
-        |--- page.tsx
     |-- components/
-        |--- chat/
-        |--- ui/
-        |--- billing-form.tsx
-        |--- dashboard.tsx
-        |--- delete-user-modal.tsx
-        |--- icons.tsx
-        |--- max-width-wrapper.tsx
-        |--- mobile-nav.tsx
-        |--- navbar.tsx
-        |--- pdf-fullscreen.tsx
-        |--- pdf-renderer.tsx
-        |--- providers.tsx
-        |--- upgrade-button.tsx
-        |--- upload-button.tsx
-        |--- user-account-nav.tsx
     |-- config/
-        |--- infinite-query.ts
-        |--- links.ts
-        |--- message.ts
-        |--- stripe.ts
     |-- db/
-        |--- index.ts
     |-- lib/
-        |--- validators/
-        |--- openai.ts
-        |--- pinecone.ts
-        |--- stripe.ts
-        |--- uploadthing.ts
-        |--- utils.ts
     |-- trpc/
-        |--- index.ts
-        |--- trpc.ts
     |-- types/
-        |--- message.ts
-    |-- middleware.ts
-  |- .env.local
+    |-- proxy.ts
   |- .env.example
-  |- .eslintrc.js
+  |- .env/.env.local
   |- .gitignore
   |- components.json
   |- environment.d.ts
+  |- eslint.config.mjs
   |- next.config.mjs
   |- package-lock.json
   |- package.json
   |- postcss.config.js
+  |- prisma.config.ts
   |- tailwind.config.ts
   |- tsconfig.json
+  |- vercel.ts
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -272,63 +234,70 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in quill.
 
 <!--- DEPENDENCIES_START --->
-
+- [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^3.0.29
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.3.4
-- [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.2.3
+- [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.11.0
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
-- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^7.8.0
+- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^8.3.15
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^2.2.0
-- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^5.12.1
-- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.0.4
-- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.0.5
+- [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.4.0
+- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.4.0
+- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
+- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
 - [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.0.6
-- [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.0.3
-- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.0.2
+- [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.1.8
+- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
 - [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.0.7
-- [@tailwindcss/typography](https://www.npmjs.com/package/@tailwindcss/typography): ^0.5.12
+- [@tailwindcss/typography](https://www.npmjs.com/package/@tailwindcss/typography): ^0.5.19
 - [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^5.28.14
-- [@trpc/client](https://www.npmjs.com/package/@trpc/client): ^11.0.0-rc.330
-- [@trpc/next](https://www.npmjs.com/package/@trpc/next): ^11.0.0-rc.330
-- [@trpc/react-query](https://www.npmjs.com/package/@trpc/react-query): ^11.0.0-rc.330
-- [@trpc/server](https://www.npmjs.com/package/@trpc/server): ^11.0.0-rc.330
-- [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^6.4.4
-- [ai](https://www.npmjs.com/package/ai): ^3.0.21
-- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.0
-- [clsx](https://www.npmjs.com/package/clsx): ^2.1.0
-- [date-fns](https://www.npmjs.com/package/date-fns): ^3.6.0
+- [@trpc/client](https://www.npmjs.com/package/@trpc/client): ^11.10.0
+- [@trpc/next](https://www.npmjs.com/package/@trpc/next): ^11.10.0
+- [@trpc/react-query](https://www.npmjs.com/package/@trpc/react-query): ^11.10.0
+- [@trpc/server](https://www.npmjs.com/package/@trpc/server): ^11.10.0
+- [@types/node](https://www.npmjs.com/package/@types/node): ^25
+- [@types/pg](https://www.npmjs.com/package/@types/pg): ^8.16.0
+- [@types/react](https://www.npmjs.com/package/@types/react): 19.2.10
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
+- [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
+- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.33
+- [@vercel/functions](https://www.npmjs.com/package/@vercel/functions): ^3.4.2
+- [ai](https://www.npmjs.com/package/ai): ^6.0.81
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.23
+- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
+- [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
+- [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
+- [dotenv](https://www.npmjs.com/package/dotenv): ^17.2.4
+- [eslint](https://www.npmjs.com/package/eslint): ^9
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.1.6
 - [langchain](https://www.npmjs.com/package/langchain): ^0.1.33
-- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.364.0
-- [next](https://www.npmjs.com/package/next): 14.1.4
-- [next-themes](https://www.npmjs.com/package/next-themes): ^0.3.0
-- [openai](https://www.npmjs.com/package/openai): ^4.33.0
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.563.0
+- [next](https://www.npmjs.com/package/next): 16.1.6
+- [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
+- [openai](https://www.npmjs.com/package/openai): ^6.21.0
 - [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^1.1.1
-- [react](https://www.npmjs.com/package/react): ^18
-- [react-dom](https://www.npmjs.com/package/react-dom): ^18
-- [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^14.2.3
-- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.51.2
-- [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton): ^3.4.0
-- [react-markdown](https://www.npmjs.com/package/react-markdown): ^9.0.1
-- [react-pdf](https://www.npmjs.com/package/react-pdf): ^7.7.1
-- [react-resize-detector](https://www.npmjs.com/package/react-resize-detector): ^10.0.1
-- [react-textarea-autosize](https://www.npmjs.com/package/react-textarea-autosize): ^8.5.3
-- [simplebar-react](https://www.npmjs.com/package/simplebar-react): ^3.2.4
-- [sonner](https://www.npmjs.com/package/sonner): ^1.4.41
-- [stripe](https://www.npmjs.com/package/stripe): ^15.1.0
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.2.2
-- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [uploadthing](https://www.npmjs.com/package/uploadthing): ^6.9.0
-- [zod](https://www.npmjs.com/package/zod): ^3.22.4
-- [@types/node](https://www.npmjs.com/package/@types/node): ^20
-- [@types/react](https://www.npmjs.com/package/@types/react): ^18
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.0.1
-- [eslint](https://www.npmjs.com/package/eslint): ^8
-- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 14.1.4
+- [pg](https://www.npmjs.com/package/pg): ^8.18.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
-- [prisma](https://www.npmjs.com/package/prisma): ^5.12.1
+- [prisma](https://www.npmjs.com/package/prisma): ^7.4.0
+- [react](https://www.npmjs.com/package/react): 19.2.4
+- [react-dom](https://www.npmjs.com/package/react-dom): 19.2.4
+- [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^15.0.0
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.51.2
+- [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton): ^3.5.0
+- [react-markdown](https://www.npmjs.com/package/react-markdown): ^9.0.1
+- [react-pdf](https://www.npmjs.com/package/react-pdf): ^10.3.0
+- [react-resize-detector](https://www.npmjs.com/package/react-resize-detector): ^12.3.0
+- [react-textarea-autosize](https://www.npmjs.com/package/react-textarea-autosize): ^8.5.9
+- [simplebar-react](https://www.npmjs.com/package/simplebar-react): ^3.3.2
+- [sonner](https://www.npmjs.com/package/sonner): ^1.4.41
+- [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.4.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
+- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
 - [typescript](https://www.npmjs.com/package/typescript): ^5
+- [uploadthing](https://www.npmjs.com/package/uploadthing): ^7.7.4
+- [zod](https://www.npmjs.com/package/zod): ^4.3.6
+
 <!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
