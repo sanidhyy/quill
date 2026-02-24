@@ -129,7 +129,7 @@
     "react-resize-detector": "^12.3.0",
     "react-textarea-autosize": "^8.5.9",
     "simplebar-react": "^3.3.2",
-    "sonner": "^1.4.41",
+    "sonner": "^2.0.7",
     "stripe": "^20.3.1",
     "tailwind-merge": "^3.5.0",
     "tailwindcss-animate": "^1.0.7",
