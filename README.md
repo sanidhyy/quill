@@ -51,12 +51,50 @@ quill/
   |- public/
   |- src/
     |-- app/
+      |--- _trpc/
+      |--- api/
+      |--- auth-callback/
+      |--- dashboard/
+      |--- pricing/
+      |--- favicon.ico
+      |--- globals.css
+      |--- layout.tsx
+      |--- page.tsx
     |-- components/
+      |--- chat/
+      |--- ui/
+      |--- billing-form.tsx
+      |--- dashboard.tsx
+      |--- delete-file-modal.tsx
+      |--- icons.tsx
+      |--- max-width-wrapper.tsx
+      |--- mobile-nav.tsx
+      |--- navbar.tsx
+      |--- pdf-fullscreen.tsx
+      |--- pdf-renderer.tsx
+      |--- providers.tsx
+      |--- upgrade-button.tsx
+      |--- upload-button.tsx
+      |--- user-account-nav.tsx
     |-- config/
+      |--- infinite-query.ts
+      |--- links.ts
+      |--- message.ts
+      |--- stripe.ts
     |-- db/
+      |--- index.ts
     |-- lib/
+      |--- validators/
+      |--- openai.ts
+      |--- pinecone.ts
+      |--- stripe.ts
+      |--- uploadthing.ts
+      |--- utils.ts
     |-- trpc/
+      |--- index.ts
+      |--- trpc.ts
     |-- types/
+      |--- message.ts
     |-- proxy.ts
   |- .env.example
   |- .env/.env.local
