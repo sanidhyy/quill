@@ -241,7 +241,7 @@ Useful resources and dependencies that are used in quill.
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
 - [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^8.3.15
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^2.2.0
-- [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.4.0
+- [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.4.1
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.4.0
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
@@ -263,7 +263,7 @@ Useful resources and dependencies that are used in quill.
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.33
 - [@vercel/functions](https://www.npmjs.com/package/@vercel/functions): ^3.4.2
 - [ai](https://www.npmjs.com/package/ai): ^6.0.81
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.23
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
@@ -291,7 +291,7 @@ Useful resources and dependencies that are used in quill.
 - [simplebar-react](https://www.npmjs.com/package/simplebar-react): ^3.3.2
 - [sonner](https://www.npmjs.com/package/sonner): ^1.4.41
 - [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.4.0
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.5.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
 - [typescript](https://www.npmjs.com/package/typescript): ^5
