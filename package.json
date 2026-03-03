@@ -106,7 +106,7 @@
     "@trpc/server": "^11.10.0",
     "@uploadthing/react": "^7.3.3",
     "@vercel/config": "^0.0.33",
-    "@vercel/functions": "^3.4.2",
+    "@vercel/functions": "^3.4.3",
     "ai": "^6.0.81",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
