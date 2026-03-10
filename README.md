@@ -305,7 +305,7 @@ Useful resources and dependencies that are used in quill.
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
-- [dotenv](https://www.npmjs.com/package/dotenv): ^17.2.4
+- [dotenv](https://www.npmjs.com/package/dotenv): ^17.3.1
 - [eslint](https://www.npmjs.com/package/eslint): ^9
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.1.6
 - [langchain](https://www.npmjs.com/package/langchain): ^0.1.33
@@ -323,7 +323,7 @@ Useful resources and dependencies that are used in quill.
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.51.2
 - [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton): ^3.5.0
 - [react-markdown](https://www.npmjs.com/package/react-markdown): ^9.0.1
-- [react-pdf](https://www.npmjs.com/package/react-pdf): ^10.3.0
+- [react-pdf](https://www.npmjs.com/package/react-pdf): ^10.4.1
 - [react-resize-detector](https://www.npmjs.com/package/react-resize-detector): ^12.3.0
 - [react-textarea-autosize](https://www.npmjs.com/package/react-textarea-autosize): ^8.5.9
 - [simplebar-react](https://www.npmjs.com/package/simplebar-react): ^3.3.2
