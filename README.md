@@ -280,7 +280,7 @@ Useful resources and dependencies that are used in quill.
 - [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^8.3.15
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^2.2.0
 - [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.4.1
-- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.4.2
+- [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.5.0
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
 - [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.0.6
