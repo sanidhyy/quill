@@ -310,7 +310,7 @@ Useful resources and dependencies that are used in quill.
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.1.6
 - [langchain](https://www.npmjs.com/package/langchain): ^0.1.33
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.577.0
-- [next](https://www.npmjs.com/package/next): 16.1.6
+- [next](https://www.npmjs.com/package/next): 16.1.7
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [openai](https://www.npmjs.com/package/openai): ^6.21.0
 - [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^1.1.1
