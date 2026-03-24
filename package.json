@@ -105,7 +105,7 @@
     "@trpc/react-query": "^11.13.4",
     "@trpc/server": "^11.13.4",
     "@uploadthing/react": "^7.3.3",
-    "@vercel/config": "^0.0.38",
+    "@vercel/config": "^0.0.41",
     "@vercel/functions": "^3.4.3",
     "ai": "^6.0.81",
     "class-variance-authority": "^0.7.1",
