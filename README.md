@@ -295,7 +295,7 @@ Useful resources and dependencies that are used in quill.
 - [@trpc/server](https://www.npmjs.com/package/@trpc/server): ^11.13.4
 - [@types/node](https://www.npmjs.com/package/@types/node): ^25
 - [@types/pg](https://www.npmjs.com/package/@types/pg): ^8.20.0
-- [@types/react](https://www.npmjs.com/package/@types/react): 19.2.10
+- [@types/react](https://www.npmjs.com/package/@types/react): 19.2.14
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.41
