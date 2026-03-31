@@ -139,7 +139,7 @@
   "devDependencies": {
     "@types/node": "^25",
     "@types/pg": "^8.20.0",
-    "@types/react": "19.2.10",
+    "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "autoprefixer": "^10.4.27",
     "eslint": "^9",
@@ -150,7 +150,7 @@
     "typescript": "^5"
   },
   "overrides": {
-    "@types/react": "19.2.10",
+    "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3"
   }
 }
