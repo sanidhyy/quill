@@ -103,7 +103,7 @@
     "@trpc/client": "^11.13.4",
     "@trpc/next": "^11.13.4",
     "@trpc/react-query": "^11.13.4",
-    "@trpc/server": "^11.13.4",
+    "@trpc/server": "^11.16.0",
     "@uploadthing/react": "^7.3.3",
     "@vercel/config": "^0.0.41",
     "@vercel/functions": "^3.4.3",
