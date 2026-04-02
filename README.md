@@ -322,7 +322,7 @@ Useful resources and dependencies that are used in quill.
 - [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^15.0.0
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.51.2
 - [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton): ^3.5.0
-- [react-markdown](https://www.npmjs.com/package/react-markdown): ^9.0.1
+- [react-markdown](https://www.npmjs.com/package/react-markdown): ^10.1.0
 - [react-pdf](https://www.npmjs.com/package/react-pdf): ^10.4.1
 - [react-resize-detector](https://www.npmjs.com/package/react-resize-detector): ^12.3.0
 - [react-textarea-autosize](https://www.npmjs.com/package/react-textarea-autosize): ^8.5.9
