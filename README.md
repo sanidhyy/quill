@@ -332,7 +332,7 @@ Useful resources and dependencies that are used in quill.
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.5.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [typescript](https://www.npmjs.com/package/typescript): ^5
+- [typescript](https://www.npmjs.com/package/typescript): ^6
 - [uploadthing](https://www.npmjs.com/package/uploadthing): ^7.7.4
 - [zod](https://www.npmjs.com/package/zod): ^4.3.6
 
