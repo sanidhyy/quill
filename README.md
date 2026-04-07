@@ -277,7 +277,7 @@ Useful resources and dependencies that are used in quill.
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.11.0
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
-- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^8.3.15
+- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.0.1
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^2.2.0
 - [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.4.1
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.5.0
