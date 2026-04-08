@@ -316,7 +316,7 @@ Useful resources and dependencies that are used in quill.
 - [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^1.1.1
 - [pg](https://www.npmjs.com/package/pg): ^8.20.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
-- [prisma](https://www.npmjs.com/package/prisma): ^7.4.1
+- [prisma](https://www.npmjs.com/package/prisma): ^7.7.0
 - [react](https://www.npmjs.com/package/react): 19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.4
 - [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^15.0.0
