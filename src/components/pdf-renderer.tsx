@@ -31,13 +31,13 @@ import { PdfFullscreen } from "./pdf-fullscreen";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 type PDFRendererProps = {
   url: string;
 };
 
-export const PDFRenderer = ({ url }: PDFRendererProps) => {
+const PDFRenderer = ({ url }: PDFRendererProps) => {
   const { width, ref } = useResizeDetector();
 
   const [numPages, setNumPages] = useState<number | undefined>(undefined);
@@ -191,9 +191,9 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
                 </div>
               }
               onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-              onLoadError={() =>
+              onLoadError={(error) =>
                 toast.error("Error loading PDF.", {
-                  description: "Please try again.",
+                  description: error.message || "Please try again.",
                 })
               }
               file={url}
@@ -230,3 +230,5 @@ export const PDFRenderer = ({ url }: PDFRendererProps) => {
     </div>
   );
 };
+
+export default PDFRenderer;
