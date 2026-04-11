@@ -277,7 +277,7 @@ Useful resources and dependencies that are used in quill.
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.11.0
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
-- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^8.3.15
+- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.0.1
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^2.2.0
 - [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.4.1
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.5.0
@@ -316,7 +316,7 @@ Useful resources and dependencies that are used in quill.
 - [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^1.1.1
 - [pg](https://www.npmjs.com/package/pg): ^8.20.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
-- [prisma](https://www.npmjs.com/package/prisma): ^7.4.1
+- [prisma](https://www.npmjs.com/package/prisma): ^7.7.0
 - [react](https://www.npmjs.com/package/react): 19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.4
 - [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^15.0.0
@@ -330,9 +330,9 @@ Useful resources and dependencies that are used in quill.
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.7
 - [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.5.0
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.4.19
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [typescript](https://www.npmjs.com/package/typescript): ^5
+- [typescript](https://www.npmjs.com/package/typescript): ^6
 - [uploadthing](https://www.npmjs.com/package/uploadthing): ^7.7.4
 - [zod](https://www.npmjs.com/package/zod): ^4.3.6
 
