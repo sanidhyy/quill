@@ -44,7 +44,6 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 quill/
   |- prisma/
@@ -104,15 +103,15 @@ quill/
   |- environment.d.ts
   |- eslint.config.mjs
   |- next.config.mjs
-  |- package-lock.json
   |- package.json
+  |- pnpm-lock.yaml
+  |- pnpm-workspace.yaml
   |- postcss.config.js
   |- prisma.config.ts
   |- tailwind.config.ts
   |- tsconfig.json
   |- vercel.ts
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -274,13 +273,12 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in quill.
 
 <!--- DEPENDENCIES_START --->
-
 - [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^3.0.29
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.3.4
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.11.0
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
-- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.0.1
+- [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^8.3.15
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^2.2.0
 - [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.4.1
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.5.0
@@ -290,6 +288,7 @@ Useful resources and dependencies that are used in quill.
 - [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.1.8
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
 - [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.0.7
+- [@radix-ui/react-visually-hidden](https://www.npmjs.com/package/@radix-ui/react-visually-hidden): ^1.2.4
 - [@tailwindcss/typography](https://www.npmjs.com/package/@tailwindcss/typography): ^0.5.19
 - [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^5.28.14
 - [@trpc/client](https://www.npmjs.com/package/@trpc/client): ^11.16.0
@@ -316,26 +315,26 @@ Useful resources and dependencies that are used in quill.
 - [next](https://www.npmjs.com/package/next): 16.2.1
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [openai](https://www.npmjs.com/package/openai): ^6.32.0
-- [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^1.1.1
+- [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^2.4.5
 - [pg](https://www.npmjs.com/package/pg): ^8.20.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
-- [prisma](https://www.npmjs.com/package/prisma): ^7.7.0
+- [prisma](https://www.npmjs.com/package/prisma): ^7.4.1
 - [react](https://www.npmjs.com/package/react): 19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.4
 - [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^15.0.0
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.51.2
 - [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton): ^3.5.0
 - [react-markdown](https://www.npmjs.com/package/react-markdown): ^10.1.0
-- [react-pdf](https://www.npmjs.com/package/react-pdf): ^10.4.1
+- [react-pdf](https://www.npmjs.com/package/react-pdf): ^9.2.1
 - [react-resize-detector](https://www.npmjs.com/package/react-resize-detector): ^12.3.0
 - [react-textarea-autosize](https://www.npmjs.com/package/react-textarea-autosize): ^8.5.9
 - [simplebar-react](https://www.npmjs.com/package/simplebar-react): ^3.3.2
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.7
 - [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.5.0
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.4.19
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [typescript](https://www.npmjs.com/package/typescript): ^6
+- [typescript](https://www.npmjs.com/package/typescript): ^5
 - [uploadthing](https://www.npmjs.com/package/uploadthing): ^7.7.4
 - [zod](https://www.npmjs.com/package/zod): ^4.3.6
 
