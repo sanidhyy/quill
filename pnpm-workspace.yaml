@@ -1,0 +1,7 @@
+allowBuilds:
+  '@prisma/engines': false
+  canvas: false
+  msgpackr-extract: false
+  prisma: false
+  sharp: false
+  unrs-resolver: false
