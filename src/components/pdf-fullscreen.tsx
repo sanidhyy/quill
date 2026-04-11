@@ -1,3 +1,4 @@
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Expand, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Document, Page } from "react-pdf";
@@ -6,7 +7,12 @@ import SimpleBar from "simplebar-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 type PdfFullscreenProps = {
   fileUrl: string;
@@ -17,7 +23,6 @@ export const PdfFullscreen = ({ fileUrl }: PdfFullscreenProps) => {
 
   const [numPages, setNumPages] = useState<number | undefined>(undefined);
   const [isOpen, setIsOpen] = useState(false);
-  const [currPage, setCurrPage] = useState(1);
 
   return (
     <Dialog
@@ -38,6 +43,10 @@ export const PdfFullscreen = ({ fileUrl }: PdfFullscreenProps) => {
       </DialogTrigger>
 
       <DialogContent className="max-w-7xl w-full">
+        <VisuallyHidden>
+          <DialogTitle>Fullscreen PDF</DialogTitle>
+        </VisuallyHidden>
+
         <SimpleBar autoHide={false} className="max-h-[calc(100vh-10rem)] mt-6">
           <div ref={ref}>
             <Document

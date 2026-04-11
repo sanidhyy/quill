@@ -26,7 +26,13 @@ const nextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "ufs.sh",
+        pathname: "/f/**",
+      },
     ],
+    qualities: [100, 75],
   },
 };
 

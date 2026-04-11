@@ -44,6 +44,7 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 quill/
   |- prisma/
@@ -111,6 +112,7 @@ quill/
   |- tsconfig.json
   |- vercel.ts
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -241,7 +243,7 @@ STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     - `STRIPE_PRICE_ID`
     - `STRIPE_WEBHOOK_SECRET`
 
-13. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `yarn dev`.
+13. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `pnpm dev`.
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
@@ -272,6 +274,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in quill.
 
 <!--- DEPENDENCIES_START --->
+
 - [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^3.0.29
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.3.4
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.11.0
