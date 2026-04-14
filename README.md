@@ -275,7 +275,7 @@ Useful resources and dependencies that are used in quill.
 <!--- DEPENDENCIES_START --->
 - [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^3.0.29
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.2.2
-- [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.11.0
+- [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.12.0
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
 - [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.0.2
