@@ -24,8 +24,8 @@ importers:
         specifier: ^0.0.4
         version: 0.0.4(openai@6.34.0(zod@4.3.6))
       '@mantine/hooks':
-        specifier: ^8.3.15
-        version: 8.3.18(react@19.2.4)
+        specifier: ^9.0.2
+        version: 9.0.2(react@19.2.4)
       '@pinecone-database/pinecone':
         specifier: ^2.2.0
         version: 2.2.2
@@ -927,10 +927,10 @@ packages:
     resolution: {integrity: sha512-cXWgKE3sdWLSqAa8ykbCcUsUF1Kyr5J3HOWYGuobhPEycXW4WI++d5DhzdpL238mzoEXTi90VqfSCra37l5YqA==}
     engines: {node: '>=18'}
 
-  '@mantine/hooks@8.3.18':
-    resolution: {integrity: sha512-QoWr9+S8gg5050TQ06aTSxtlpGjYOpIllRbjYYXlRvZeTsUqiTbVfvQROLexu4rEaK+yy9Wwriwl9PMRgbLqPw==}
+  '@mantine/hooks@9.0.2':
+    resolution: {integrity: sha512-luCVX4okiAZaSxuBYPtyPJJT8RwZyM2JUkSD4KWefzzcDbkKGHT4d4pHrvViwn5QcH2dY2j/42lj7ZTGX2yncw==}
     peerDependencies:
-      react: ^18.x || ^19.x
+      react: ^19.2.0
 
   '@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.3':
     resolution: {integrity: sha512-QZHtlVgbAdy2zAqNA9Gu1UpIuI8Xvsd1v8ic6B2pZmeFnFcMWiPLfWXh7TVw4eGEZ/C9TH281KwhVoeQUKbyjw==}
@@ -5136,7 +5136,7 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@mantine/hooks@8.3.18(react@19.2.4)':
+  '@mantine/hooks@9.0.2(react@19.2.4)':
     dependencies:
       react: 19.2.4
 
