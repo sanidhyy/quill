@@ -78,8 +78,8 @@ importers:
         specifier: ^7.3.3
         version: 7.3.3(next@16.2.3(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.5))(react@19.2.5))(react@19.2.5)(uploadthing@7.7.4(next@16.2.3(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.5))(react@19.2.5))(tailwindcss@3.4.19(yaml@2.8.3)))
       '@vercel/config':
-        specifier: ^0.0.41
-        version: 0.0.41
+        specifier: ^0.2.1
+        version: 0.2.1
       '@vercel/functions':
         specifier: ^3.4.3
         version: 3.4.3
@@ -1928,8 +1928,8 @@ packages:
   '@uploadthing/shared@7.1.10':
     resolution: {integrity: sha512-R/XSA3SfCVnLIzFpXyGaKPfbwlYlWYSTuGjTFHuJhdAomuBuhopAHLh2Ois5fJibAHzi02uP1QCKbgTAdmArqg==}
 
-  '@vercel/config@0.0.41':
-    resolution: {integrity: sha512-HBtFKzNAuR/3hxnlgOLtiqOjJ71c6eye9jz4NzYqUCtdN5xRsX+PiScn5gEwLvd5TnzaKDvAwcmOWGmjnW1uFQ==}
+  '@vercel/config@0.2.1':
+    resolution: {integrity: sha512-MWLB1WjVqj2z7oMBzhQez+uMr1JjK3Gq50tZ1EgcJpOua1Dyt2ITLNjh+nNyO0Z8VXdurszFeXvaDnswJRgSgQ==}
     hasBin: true
 
   '@vercel/functions@3.4.3':
@@ -1949,8 +1949,8 @@ packages:
     resolution: {integrity: sha512-UycprH3T6n3jH0k44NHMa7pnFHGu/N05MjojYr+Mc6I7obkoLIJujSWwin1pCvdy/eOxrI/l3uDLQsmcrOb4ug==}
     engines: {node: '>= 20'}
 
-  '@vercel/routing-utils@6.1.0':
-    resolution: {integrity: sha512-dEw7WSVocg92Gtac6ZtJKkEU/v4+3kPu6t50x/aqYj8Sh6yI1wZBmx1KfSYK7LASOWyO294Ckkie07e++pCjTQ==}
+  '@vercel/routing-utils@6.1.1':
+    resolution: {integrity: sha512-kUJn6CRuLvua5xvDZTJu1rC8GLdniC8D5VIzoJKm0dUdcUxv3LEx+pi8dokxWS+YM7cIs1Z3Y8ms/BDW1iBzzA==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -1979,8 +1979,14 @@ packages:
   ajv@6.14.0:
     resolution: {integrity: sha512-IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==}
 
+  ajv@6.15.0:
+    resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
+
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
+
+  ajv@8.20.0:
+    resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
   ansi-styles@4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
@@ -5387,7 +5393,7 @@ snapshots:
 
   '@prisma/streams-local@0.1.2':
     dependencies:
-      ajv: 8.18.0
+      ajv: 8.20.0
       better-result: 2.8.2
       env-paths: 3.0.0
       proper-lockfile: 4.1.2
@@ -6105,9 +6111,9 @@ snapshots:
       effect: 3.17.7
       sqids: 0.3.0
 
-  '@vercel/config@0.0.41':
+  '@vercel/config@0.2.1':
     dependencies:
-      '@vercel/routing-utils': 6.1.0
+      '@vercel/routing-utils': 6.1.1
       pretty-cache-header: 1.0.0
       zod: 3.25.76
 
@@ -6119,12 +6125,12 @@ snapshots:
 
   '@vercel/oidc@3.2.0': {}
 
-  '@vercel/routing-utils@6.1.0':
+  '@vercel/routing-utils@6.1.1':
     dependencies:
       path-to-regexp: 6.1.0
       path-to-regexp-updated: path-to-regexp@6.3.0
     optionalDependencies:
-      ajv: 6.14.0
+      ajv: 6.15.0
 
   abort-controller@3.0.0:
     dependencies:
@@ -6155,7 +6161,22 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
+  ajv@6.15.0:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-json-stable-stringify: 2.1.0
+      json-schema-traverse: 0.4.1
+      uri-js: 4.4.1
+    optional: true
+
   ajv@8.18.0:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-uri: 3.1.0
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+
+  ajv@8.20.0:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-uri: 3.1.0
