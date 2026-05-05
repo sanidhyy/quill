@@ -275,7 +275,7 @@ Useful resources and dependencies that are used in quill.
 <!--- DEPENDENCIES_START --->
 - [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^3.0.53
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.2.2
-- [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.12.0
+- [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.12.1
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
 - [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.0.2
@@ -311,7 +311,7 @@ Useful resources and dependencies that are used in quill.
 - [eslint](https://www.npmjs.com/package/eslint): ^9
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.1.6
 - [langchain](https://www.npmjs.com/package/langchain): ^0.1.33
-- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.11.0
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.14.0
 - [next](https://www.npmjs.com/package/next): 16.2.3
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [openai](https://www.npmjs.com/package/openai): ^6.32.0
