@@ -82,7 +82,7 @@
     "tailwindcss": "^3.3.0",
     "typescript": "^6"
   },
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@11.1.2",
   "author": {
     "name": "Sanidhya Kumar Verma",
     "email": "sanidhya.verma12345@gmail.com",
