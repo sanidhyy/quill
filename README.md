@@ -306,7 +306,7 @@ Useful resources and dependencies that are used in quill.
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.0
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
-- [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
+- [date-fns](https://www.npmjs.com/package/date-fns): ^4.4.0
 - [dotenv](https://www.npmjs.com/package/dotenv): ^17.4.2
 - [eslint](https://www.npmjs.com/package/eslint): ^9
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.1.6
