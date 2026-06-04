@@ -297,7 +297,7 @@ Useful resources and dependencies that are used in quill.
 - [@trpc/server](https://www.npmjs.com/package/@trpc/server): ^11.17.0
 - [@types/node](https://www.npmjs.com/package/@types/node): ^25
 - [@types/pg](https://www.npmjs.com/package/@types/pg): ^8.20.0
-- [@types/react](https://www.npmjs.com/package/@types/react): 19.2.14
+- [@types/react](https://www.npmjs.com/package/@types/react): 19.2.16
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.5.0
@@ -319,7 +319,7 @@ Useful resources and dependencies that are used in quill.
 - [pg](https://www.npmjs.com/package/pg): ^8.21.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^7.4.1
-- [react](https://www.npmjs.com/package/react): 19.2.6
+- [react](https://www.npmjs.com/package/react): 19.2.7
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.6
 - [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^15.0.0
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.76.0
