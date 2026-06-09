@@ -13,7 +13,7 @@ importers:
         version: 3.0.67(zod@4.3.6)
       '@hookform/resolvers':
         specifier: ^5.2.2
-        version: 5.2.2(react-hook-form@7.76.0(react@19.2.7))
+        version: 5.2.2(react-hook-form@7.78.0(react@19.2.7))
       '@kinde-oss/kinde-auth-nextjs':
         specifier: ^2.12.1
         version: 2.12.1(next@16.2.6(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.6(react@19.2.7))(react@19.2.7))(react-dom@19.2.6(react@19.2.7))(react@19.2.7)
@@ -129,8 +129,8 @@ importers:
         specifier: ^15.0.0
         version: 15.0.0(react@19.2.7)
       react-hook-form:
-        specifier: ^7.76.0
-        version: 7.76.0(react@19.2.7)
+        specifier: ^7.78.0
+        version: 7.78.0(react@19.2.7)
       react-loading-skeleton:
         specifier: ^3.5.0
         version: 3.5.0(react@19.2.7)
@@ -3957,8 +3957,8 @@ packages:
     peerDependencies:
       react: '>= 16.8 || 18.0.0'
 
-  react-hook-form@7.76.0:
-    resolution: {integrity: sha512-eKtLGgFeSgkHqQD8J59AMZ9a4uD1D83iSIzt4YlTGD7liDen5rrjcUO1rVIGd9yC1gofryjtHbv+4ny4hkLWlw==}
+  react-hook-form@7.78.0:
+    resolution: {integrity: sha512-EEZqc+N23moyzTlz61Pj+JvcXo76ICkpfOZo8JZw+sM4+wLQGh6nI2Ms+PdMOYNluFu0ghlM7B8mCzhRYtJCnA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -4898,10 +4898,10 @@ snapshots:
     dependencies:
       hono: 4.12.18
 
-  '@hookform/resolvers@5.2.2(react-hook-form@7.76.0(react@19.2.7))':
+  '@hookform/resolvers@5.2.2(react-hook-form@7.78.0(react@19.2.7))':
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.76.0(react@19.2.7)
+      react-hook-form: 7.78.0(react@19.2.7)
 
   '@humanfs/core@0.19.1': {}
 
@@ -8334,7 +8334,7 @@ snapshots:
       prop-types: 15.8.1
       react: 19.2.7
 
-  react-hook-form@7.76.0(react@19.2.7):
+  react-hook-form@7.78.0(react@19.2.7):
     dependencies:
       react: 19.2.7
 
