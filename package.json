@@ -20,7 +20,7 @@
     "@kinde-oss/kinde-auth-nextjs": "^2.12.1",
     "@langchain/openai": "^0.0.28",
     "@langchain/pinecone": "^0.0.4",
-    "@mantine/hooks": "^9.0.2",
+    "@mantine/hooks": "^9.4.1",
     "@pinecone-database/pinecone": "^2.2.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
