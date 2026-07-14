@@ -55,7 +55,7 @@
     "react": "19.2.7",
     "react-dom": "19.2.6",
     "react-dropzone": "^15.0.0",
-    "react-hook-form": "^7.78.0",
+    "react-hook-form": "^7.81.0",
     "react-loading-skeleton": "^3.5.0",
     "react-markdown": "^10.1.0",
     "react-pdf": "^10.4.1",
