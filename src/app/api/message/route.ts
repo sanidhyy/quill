@@ -2,7 +2,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { openai as openaiProvider } from "@ai-sdk/openai";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PineconeStore } from "@langchain/pinecone";
-import { streamText } from "ai";
+import { createTextStreamResponse, streamText, toTextStream } from "ai";
 import { NextResponse, type NextRequest } from "next/server";
 
 import { db } from "@/db";
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
   }));
 
   const result = streamText({
-    model: openaiProvider("gpt-3.5-turbo"),
+    model: openaiProvider("gpt-4o"),
     temperature: 0,
     system:
       "Use the following pieces of context (or previous conversaton if needed) to answer the users question in markdown format.",
@@ -110,5 +110,11 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  return result.toTextStreamResponse();
+  const textStreamResponse = createTextStreamResponse({
+    stream: toTextStream({
+      stream: result.stream,
+    }),
+  });
+
+  return textStreamResponse;
 }

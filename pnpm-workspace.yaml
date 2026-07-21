@@ -5,3 +5,6 @@ allowBuilds:
   prisma: false
   sharp: false
   unrs-resolver: false
+minimumReleaseAgeExclude:
+  - '@ai-sdk/gateway@4.0.24'
+  - ai@7.0.32

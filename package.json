@@ -15,7 +15,7 @@
     "postinstall": "pnpm run db:generate"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^3.0.67",
+    "@ai-sdk/openai": "^4.0.16",
     "@hookform/resolvers": "^5.2.2",
     "@kinde-oss/kinde-auth-nextjs": "^2.13.0",
     "@langchain/openai": "^0.0.28",
@@ -40,7 +40,7 @@
     "@uploadthing/react": "^7.3.3",
     "@vercel/config": "^0.5.2",
     "@vercel/functions": "^3.5.1",
-    "ai": "^6.0.81",
+    "ai": "^7.0.32",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
@@ -82,7 +82,7 @@
     "tailwindcss": "^3.3.0",
     "typescript": "^6"
   },
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@11.15.1",
   "author": {
     "name": "Sanidhya Kumar Verma",
     "email": "sanidhya.verma12345@gmail.com",
