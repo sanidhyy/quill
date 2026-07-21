@@ -287,7 +287,7 @@ Useful resources and dependencies that are used in quill.
 - [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.1.18
 - [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.1.10
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.3.0
-- [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.0.7
+- [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.2.13
 - [@radix-ui/react-visually-hidden](https://www.npmjs.com/package/@radix-ui/react-visually-hidden): ^1.2.4
 - [@tailwindcss/typography](https://www.npmjs.com/package/@tailwindcss/typography): ^0.5.19
 - [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^5.28.14
@@ -303,7 +303,7 @@ Useful resources and dependencies that are used in quill.
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.5.2
 - [@vercel/functions](https://www.npmjs.com/package/@vercel/functions): ^3.5.1
 - [ai](https://www.npmjs.com/package/ai): ^6.0.81
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.2
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.4
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.4.0
