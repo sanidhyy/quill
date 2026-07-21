@@ -15,7 +15,7 @@
     "postinstall": "pnpm run db:generate"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^3.0.67",
+    "@ai-sdk/openai": "^4.0.16",
     "@hookform/resolvers": "^5.2.2",
     "@kinde-oss/kinde-auth-nextjs": "^2.13.0",
     "@langchain/openai": "^0.0.28",
