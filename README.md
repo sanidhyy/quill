@@ -273,7 +273,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in quill.
 
 <!--- DEPENDENCIES_START --->
-- [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^3.0.67
+- [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^4.0.16
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.2.2
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.13.0
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
@@ -302,7 +302,7 @@ Useful resources and dependencies that are used in quill.
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.5.2
 - [@vercel/functions](https://www.npmjs.com/package/@vercel/functions): ^3.5.1
-- [ai](https://www.npmjs.com/package/ai): ^6.0.81
+- [ai](https://www.npmjs.com/package/ai): ^7.0.32
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.4
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
