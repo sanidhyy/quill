@@ -12,8 +12,8 @@ importers:
         specifier: ^4.0.27
         version: 4.0.27(zod@4.3.6)
       '@hookform/resolvers':
-        specifier: ^5.2.2
-        version: 5.2.2(react-hook-form@7.84.0(react@19.2.7))
+        specifier: ^5.7.1
+        version: 5.7.1(@sinclair/typebox@0.29.6)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(effect@3.17.7)(react-hook-form@7.84.0(react@19.2.7))(valibot@1.2.0(typescript@6.0.3))(zod@4.3.6)
       '@kinde-oss/kinde-auth-nextjs':
         specifier: ^2.13.0
         version: 2.13.0(next@16.2.12(@babel/core@7.29.0(supports-color@7.2.0))(@opentelemetry/api@1.9.0)(react-dom@19.2.6(react@19.2.7))(react@19.2.7))(react-dom@19.2.6(react@19.2.7))(react@19.2.7)
@@ -401,10 +401,83 @@ packages:
     peerDependencies:
       hono: ^4
 
-  '@hookform/resolvers@5.2.2':
-    resolution: {integrity: sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA==}
+  '@hookform/resolvers@5.7.1':
+    resolution: {integrity: sha512-8wS/P4UDr5sQDe4nFaV51TVyfDPrWgNIXweqG0Bs9Z5LSuzKLb+RQNPvkN2oHM5SRrJyWrVH/F+LOUcFjUyvwQ==}
     peerDependencies:
+      '@sinclair/typebox': '>=0.25.24'
+      '@standard-schema/spec': ^1.0.0
+      '@typeschema/main': '>=0.13.7'
+      '@vinejs/vine': ^2.0.0 || ^3.0.0 || ^4.0.0
+      ajv: ^8.12.0
+      ajv-errors: ^3.0.0
+      ajv-formats: ^2.1.1
+      arktype: ^2.0.0
+      ata-validator: ^1.2.0
+      class-transformer: '>=0.4.0'
+      class-validator: '>=0.12.0'
+      computed-types: ^1.0.0
+      effect: ^3.10.3
+      fluentvalidation-ts: ^3.0.0
+      fp-ts: ^2.7.0
+      io-ts: ^2.0.0
+      joi: ^17.0.0
+      nope-validator: '>=0.12.0'
       react-hook-form: ^7.55.0
+      superstruct: '>=0.12.0'
+      typanion: ^3.3.2
+      valibot: '>=0.31.0 || ^1.0.0-beta.4 || ^1.0.0-rc'
+      vest: '>=3.0.0'
+      yup: ^1.0.0
+      zod: ^3.25.0 || ^4.0.0
+    peerDependenciesMeta:
+      '@sinclair/typebox':
+        optional: true
+      '@standard-schema/spec':
+        optional: true
+      '@typeschema/main':
+        optional: true
+      '@vinejs/vine':
+        optional: true
+      ajv:
+        optional: true
+      ajv-errors:
+        optional: true
+      ajv-formats:
+        optional: true
+      arktype:
+        optional: true
+      ata-validator:
+        optional: true
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+      computed-types:
+        optional: true
+      effect:
+        optional: true
+      fluentvalidation-ts:
+        optional: true
+      fp-ts:
+        optional: true
+      io-ts:
+        optional: true
+      joi:
+        optional: true
+      nope-validator:
+        optional: true
+      superstruct:
+        optional: true
+      typanion:
+        optional: true
+      valibot:
+        optional: true
+      vest:
+        optional: true
+      yup:
+        optional: true
+      zod:
+        optional: true
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2560,6 +2633,7 @@ packages:
 
   crypto-js@4.2.0:
     resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
+    deprecated: Active development of CryptoJS has been discontinued. This library is no longer maintained.
 
   cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
@@ -5153,10 +5227,17 @@ snapshots:
     dependencies:
       hono: 4.12.18
 
-  '@hookform/resolvers@5.2.2(react-hook-form@7.84.0(react@19.2.7))':
+  '@hookform/resolvers@5.7.1(@sinclair/typebox@0.29.6)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(effect@3.17.7)(react-hook-form@7.84.0(react@19.2.7))(valibot@1.2.0(typescript@6.0.3))(zod@4.3.6)':
     dependencies:
       '@standard-schema/utils': 0.3.0
       react-hook-form: 7.84.0(react@19.2.7)
+    optionalDependencies:
+      '@sinclair/typebox': 0.29.6
+      '@standard-schema/spec': 1.1.0
+      ajv: 8.20.0
+      effect: 3.17.7
+      valibot: 1.2.0(typescript@6.0.3)
+      zod: 4.3.6
 
   '@humanfs/core@0.19.1': {}
 
