@@ -17,7 +17,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^4.0.42",
     "@hookform/resolvers": "^5.7.1",
-    "@kinde-oss/kinde-auth-nextjs": "^2.13.0",
+    "@kinde-oss/kinde-auth-nextjs": "^2.13.1",
     "@langchain/openai": "^0.0.28",
     "@langchain/pinecone": "^0.0.4",
     "@mantine/hooks": "^9.4.1",
