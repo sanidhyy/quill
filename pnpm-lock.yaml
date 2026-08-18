@@ -100,7 +100,7 @@ importers:
         version: 17.4.2
       langchain:
         specifier: ^0.1.33
-        version: 0.1.37(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.21.0)
+        version: 0.1.37(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.23.0)
       lucide-react:
         specifier: ^1.23.0
         version: 1.23.0(react@19.2.8)
@@ -117,8 +117,8 @@ importers:
         specifier: ^2.4.5
         version: 2.4.5
       pg:
-        specifier: ^8.21.0
-        version: 8.21.0
+        specifier: ^8.23.0
+        version: 8.23.0
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -172,8 +172,8 @@ importers:
         specifier: ^26
         version: 26.1.1
       '@types/pg':
-        specifier: ^8.20.0
-        version: 8.20.0
+        specifier: ^8.21.0
+        version: 8.21.0
       '@types/react':
         specifier: 19.2.18
         version: 19.2.18
@@ -2065,8 +2065,11 @@ packages:
   '@types/node@26.1.1':
     resolution: {integrity: sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==}
 
-  '@types/pg@8.20.0':
-    resolution: {integrity: sha512-bEPFOaMAHTEP1EzpvHTbmwR8UsFyHSKsRisLIHVMXnpNefSbGA1bD6CVy+qKjGSqmZqNqBDV2azOBo8TgkcVow==}
+  '@types/node@26.2.0':
+    resolution: {integrity: sha512-5IviulTZeRNp2vAJ514cc/HUlY5nZ9fCbq9DMyC52BrhFZACo3nI0R7qBxhQmo/d27NFe96ur/b7Wwxklda+kg==}
+
+  '@types/pg@8.21.0':
+    resolution: {integrity: sha512-AYdtudzabjLZgVgRZmAnU8bAnVUXzuJX2IYHeSIiIHm68olD+LgQYCGWdtcNYnP0uq9c4S4NibVG3Ni7VbKW7Q==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -4110,8 +4113,8 @@ packages:
   pg-cloudflare@1.4.0:
     resolution: {integrity: sha512-Vo7z/6rrQYxpNRylp4Tlob2elzbh+N/MOQbxFVWCxS7oEx6jF53GTJFxK2WWpKuBRkmiin4Mt+xofFDjx09R0A==}
 
-  pg-connection-string@2.13.0:
-    resolution: {integrity: sha512-EMnU9E2fSULdsbErBbMaXJvFeD9B4+nPcM3f+4lsiCR0BHLPrLVjv3DbyM2hgQQviKJaTWIRRTjKjWlHg3p2ig==}
+  pg-connection-string@2.14.0:
+    resolution: {integrity: sha512-XwWDGcLRGCXAR8F/AM5bG7Q+A3Wm2s6QeEjlOKZLlH3UYcguiqCWKyWXVag5TLTIjR7oOJUY8kcADaZgWPyLeg==}
 
   pg-int8@1.0.1:
     resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
@@ -4122,18 +4125,15 @@ packages:
     peerDependencies:
       pg: '>=8.0'
 
-  pg-protocol@1.13.0:
-    resolution: {integrity: sha512-zzdvXfS6v89r6v7OcFCHfHlyG/wvry1ALxZo4LqgUoy7W9xhBDMaqOuMiF3qEV45VqsN6rdlcehHrfDtlCPc8w==}
-
-  pg-protocol@1.14.0:
-    resolution: {integrity: sha512-n5taZ1kO3s9ngDTVxsEznOqCyToTgz0FLuPq0B33COy5pPpuWJpY3/2oRBVETuOgzdqRXfWpM9HIhp2LBBT1BA==}
+  pg-protocol@1.16.0:
+    resolution: {integrity: sha512-sILXutLVjCLjcDuOmvhX5e2Z4cS5qG/6Bu3VkpFwdf/633ElGLpEh9bgmuI5I4sqKqkifQiGyiCcx1HdtrK7tg==}
 
   pg-types@2.2.0:
     resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
     engines: {node: '>=4'}
 
-  pg@8.21.0:
-    resolution: {integrity: sha512-AUP1EYJuHraQGsVoCQVIcM7TEJVGtDzxWtGFZd8rds9d+CCXlU5Js1rYgfLNvxy9iJrpHjGrRjoi/3BT9fRyiA==}
+  pg@8.23.0:
+    resolution: {integrity: sha512-Ip2EQCngowJLGOfCwkFhPXU7/ljlhn6Rxlmy4XYfL2Y+vyRM59+8uR2xqRWKdYmbXmxCFOAmKxBuSUCdF34qLg==}
     engines: {node: '>= 16.0.0'}
     peerDependencies:
       pg-native: '>=3.0.1'
@@ -5418,7 +5418,7 @@ snapshots:
 
   '@kurkle/color@0.3.4': {}
 
-  '@langchain/community@0.0.57(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pg@8.21.0)':
+  '@langchain/community@0.0.57(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pg@8.23.0)':
     dependencies:
       '@langchain/core': 0.1.63(openai@7.4.0(zod@4.3.6))
       '@langchain/openai': 0.0.28(encoding@0.1.13)
@@ -5432,7 +5432,7 @@ snapshots:
       '@pinecone-database/pinecone': 2.2.2
       lodash: 4.18.1
       mysql2: 3.15.3
-      pg: 8.21.0
+      pg: 8.23.0
     transitivePeerDependencies:
       - encoding
       - openai
@@ -5693,8 +5693,8 @@ snapshots:
   '@prisma/adapter-pg@7.8.0':
     dependencies:
       '@prisma/driver-adapter-utils': 7.8.0
-      '@types/pg': 8.20.0
-      pg: 8.21.0
+      '@types/pg': 8.21.0
+      pg: 8.23.0
       postgres-array: 3.0.4
     transitivePeerDependencies:
       - pg-native
@@ -6420,7 +6420,7 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 26.1.1
+      '@types/node': 26.2.0
       form-data: 4.0.5
 
   '@types/node@18.19.130':
@@ -6431,10 +6431,14 @@ snapshots:
     dependencies:
       undici-types: 8.3.0
 
-  '@types/pg@8.20.0':
+  '@types/node@26.2.0':
     dependencies:
-      '@types/node': 26.1.1
-      pg-protocol: 1.13.0
+      undici-types: 8.3.0
+
+  '@types/pg@8.21.0':
+    dependencies:
+      '@types/node': 26.2.0
+      pg-protocol: 1.16.0
       pg-types: 2.2.0
 
   '@types/react-dom@19.2.3(@types/react@19.2.18)':
@@ -7941,10 +7945,10 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  langchain@0.1.37(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.21.0):
+  langchain@0.1.37(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.23.0):
     dependencies:
       '@anthropic-ai/sdk': 0.9.1(encoding@0.1.13)
-      '@langchain/community': 0.0.57(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pg@8.21.0)
+      '@langchain/community': 0.0.57(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.4.0(zod@4.3.6))(pg@8.23.0)
       '@langchain/core': 0.1.63(openai@7.4.0(zod@4.3.6))
       '@langchain/openai': 0.0.28(encoding@0.1.13)
       '@langchain/textsplitters': 0.0.3(openai@7.4.0(zod@4.3.6))
@@ -8661,17 +8665,15 @@ snapshots:
   pg-cloudflare@1.4.0:
     optional: true
 
-  pg-connection-string@2.13.0: {}
+  pg-connection-string@2.14.0: {}
 
   pg-int8@1.0.1: {}
 
-  pg-pool@3.14.0(pg@8.21.0):
+  pg-pool@3.14.0(pg@8.23.0):
     dependencies:
-      pg: 8.21.0
+      pg: 8.23.0
 
-  pg-protocol@1.13.0: {}
-
-  pg-protocol@1.14.0: {}
+  pg-protocol@1.16.0: {}
 
   pg-types@2.2.0:
     dependencies:
@@ -8681,11 +8683,11 @@ snapshots:
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
 
-  pg@8.21.0:
+  pg@8.23.0:
     dependencies:
-      pg-connection-string: 2.13.0
-      pg-pool: 3.14.0(pg@8.21.0)
-      pg-protocol: 1.14.0
+      pg-connection-string: 2.14.0
+      pg-pool: 3.14.0(pg@8.23.0)
+      pg-protocol: 1.16.0
       pg-types: 2.2.0
       pgpass: 1.0.5
     optionalDependencies:
