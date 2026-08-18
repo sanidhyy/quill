@@ -300,7 +300,7 @@ Useful resources and dependencies that are used in quill.
 - [@types/react](https://www.npmjs.com/package/@types/react): 19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
-- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.5.2
+- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.6.1
 - [@vercel/functions](https://www.npmjs.com/package/@vercel/functions): ^3.9.1
 - [ai](https://www.npmjs.com/package/ai): ^7.0.32
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.4
