@@ -296,7 +296,7 @@ Useful resources and dependencies that are used in quill.
 - [@trpc/react-query](https://www.npmjs.com/package/@trpc/react-query): ^11.17.0
 - [@trpc/server](https://www.npmjs.com/package/@trpc/server): ^11.17.0
 - [@types/node](https://www.npmjs.com/package/@types/node): ^26
-- [@types/pg](https://www.npmjs.com/package/@types/pg): ^8.20.0
+- [@types/pg](https://www.npmjs.com/package/@types/pg): ^8.21.0
 - [@types/react](https://www.npmjs.com/package/@types/react): 19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
@@ -316,7 +316,7 @@ Useful resources and dependencies that are used in quill.
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [openai](https://www.npmjs.com/package/openai): ^7.4.0
 - [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^2.4.5
-- [pg](https://www.npmjs.com/package/pg): ^8.21.0
+- [pg](https://www.npmjs.com/package/pg): ^8.23.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [prisma](https://www.npmjs.com/package/prisma): ^7.4.1
 - [react](https://www.npmjs.com/package/react): 19.2.8
