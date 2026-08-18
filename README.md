@@ -273,7 +273,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in quill.
 
 <!--- DEPENDENCIES_START --->
-- [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^4.0.36
+- [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^4.0.42
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.7.1
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.13.0
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^0.0.28
