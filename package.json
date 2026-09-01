@@ -22,6 +22,7 @@
     "@langchain/pinecone": "^0.0.4",
     "@mantine/hooks": "^9.5.1",
     "@pinecone-database/pinecone": "^2.2.0",
+    "@prisma/adapter-neon": "^7.10.0",
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "^7.10.0",
     "@radix-ui/react-avatar": "^1.2.2",

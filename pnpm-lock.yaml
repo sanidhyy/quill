@@ -29,6 +29,9 @@ importers:
       '@pinecone-database/pinecone':
         specifier: ^2.2.0
         version: 2.2.2
+      '@prisma/adapter-neon':
+        specifier: ^7.10.0
+        version: 7.10.0
       '@prisma/adapter-pg':
         specifier: ^7.10.0
         version: 7.10.0
@@ -100,7 +103,7 @@ importers:
         version: 17.4.2
       langchain:
         specifier: ^0.1.33
-        version: 0.1.37(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.23.0)
+        version: 0.1.37(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.23.0)
       lucide-react:
         specifier: ^1.37.0
         version: 1.37.0(react@19.2.8)
@@ -1180,6 +1183,10 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
+  '@neondatabase/serverless@1.1.0':
+    resolution: {integrity: sha512-r3ZZhRjEcfEdKIZnoB1RusNgvHuaBRqfCzV4Gi+5A9yUX0S4HTws/ASWqt13wL4y4I+0rqsWGdA2w7EQXHi3+Q==}
+    engines: {node: '>=19.0.0'}
+
   '@next/env@16.2.12':
     resolution: {integrity: sha512-d0Z5Bc13Fa4nR8pFAKx2jay2yhJM16vlfHbTzYnUQAxlNb6B6lmn4hjt69lYNt4kRtyYP6gEM49lPRHNbIyneg==}
 
@@ -1265,6 +1272,9 @@ packages:
   '@pinecone-database/pinecone@2.2.2':
     resolution: {integrity: sha512-gbe/4SowHc64pHIm0kBdgY9hVdzsQnnnpcWviwYMB33gOmsL8brvE8fUSpl1dLDvdyXzKcQkzdBsjCDlqgpdMA==}
     engines: {node: '>=14.0.0'}
+
+  '@prisma/adapter-neon@7.10.0':
+    resolution: {integrity: sha512-2MbMamV0URbYwQ7JFZkWdHydrqqtc+GT2WbTw3VoCQmiecGYAvn6y7vkVDNR7CL/w8QOs4bCMLrhyY1Crxzoyg==}
 
   '@prisma/adapter-pg@7.10.0':
     resolution: {integrity: sha512-N7nwSor0HO1Kz6xBv0TPAjAPysKK0fac6p4fVN3ensLOuzc/83Fgmln5k92eK/cvzqdkSR/2kkAqlbcdwVrwpw==}
@@ -5590,7 +5600,7 @@ snapshots:
       '@kinde/jwt-decoder': 0.2.4
       jsrsasign: 11.1.5
 
-  '@langchain/community@0.0.57(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pg@8.23.0)':
+  '@langchain/community@0.0.57(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pg@8.23.0)':
     dependencies:
       '@langchain/core': 0.1.63(openai@7.5.0(zod@4.3.6))
       '@langchain/openai': 0.0.28(encoding@0.1.13)
@@ -5601,6 +5611,7 @@ snapshots:
       zod: 3.25.76
       zod-to-json-schema: 3.25.2(zod@3.25.76)
     optionalDependencies:
+      '@neondatabase/serverless': 1.1.0
       '@pinecone-database/pinecone': 2.2.2
       lodash: 4.18.1
       mysql2: 3.15.3
@@ -5806,6 +5817,8 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
+  '@neondatabase/serverless@1.1.0': {}
+
   '@next/env@16.2.12': {}
 
   '@next/eslint-plugin-next@16.1.6':
@@ -5861,6 +5874,12 @@ snapshots:
       ajv: 8.18.0
       cross-fetch: 3.2.0(encoding@0.1.13)
       encoding: 0.1.13
+
+  '@prisma/adapter-neon@7.10.0':
+    dependencies:
+      '@neondatabase/serverless': 1.1.0
+      '@prisma/driver-adapter-utils': 7.10.0
+      postgres-array: 3.0.4
 
   '@prisma/adapter-pg@7.10.0':
     dependencies:
@@ -8328,10 +8347,10 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  langchain@0.1.37(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.23.0):
+  langchain@0.1.37(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pdf-parse@2.4.5)(pg@8.23.0):
     dependencies:
       '@anthropic-ai/sdk': 0.9.1(encoding@0.1.13)
-      '@langchain/community': 0.0.57(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pg@8.23.0)
+      '@langchain/community': 0.0.57(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.5.0(zod@4.3.6))(pg@8.23.0)
       '@langchain/core': 0.1.63(openai@7.5.0(zod@4.3.6))
       '@langchain/openai': 0.0.28(encoding@0.1.13)
       '@langchain/textsplitters': 0.0.3(openai@7.5.0(zod@4.3.6))
