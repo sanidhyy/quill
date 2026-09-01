@@ -288,7 +288,7 @@ Useful resources and dependencies that are used in quill.
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^0.0.4
 - [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.5.1
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^2.2.0
-- [@prisma/adapter-pg](https://www.npmjs.com/package/@prisma/adapter-pg): ^7.8.0
+- [@prisma/adapter-neon](https://www.npmjs.com/package/@prisma/adapter-neon): ^7.10.0
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.0
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.2.2
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.23
@@ -309,7 +309,6 @@ Useful resources and dependencies that are used in quill.
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.6.1
-- [@vercel/functions](https://www.npmjs.com/package/@vercel/functions): ^3.9.1
 - [ai](https://www.npmjs.com/package/ai): ^7.0.32
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.4
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
@@ -324,9 +323,8 @@ Useful resources and dependencies that are used in quill.
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [openai](https://www.npmjs.com/package/openai): ^7.5.0
 - [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^2.4.5
-- [pg](https://www.npmjs.com/package/pg): ^8.23.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
-- [prisma](https://www.npmjs.com/package/prisma): ^7.4.1
+- [prisma](https://www.npmjs.com/package/prisma): ^7.10.0
 - [react](https://www.npmjs.com/package/react): 19.2.8
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.8
 - [react-dropzone](https://www.npmjs.com/package/react-dropzone): ^15.0.0
