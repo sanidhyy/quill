@@ -297,7 +297,7 @@ Useful resources and dependencies that are used in quill.
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.3.0
 - [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.2.13
 - [@radix-ui/react-visually-hidden](https://www.npmjs.com/package/@radix-ui/react-visually-hidden): ^1.2.11
-- [@tailwindcss/typography](https://www.npmjs.com/package/@tailwindcss/typography): ^0.5.19
+- [@tailwindcss/typography](https://www.npmjs.com/package/@tailwindcss/typography): ^0.5.20
 - [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^5.28.14
 - [@trpc/client](https://www.npmjs.com/package/@trpc/client): ^11.17.0
 - [@trpc/next](https://www.npmjs.com/package/@trpc/next): ^11.18.0
