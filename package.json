@@ -52,7 +52,7 @@
     "pdf-parse": "^2.4.5",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "react-dropzone": "^15.0.0",
+    "react-dropzone": "^20.1.1",
     "react-hook-form": "^7.84.0",
     "react-loading-skeleton": "^3.5.0",
     "react-markdown": "^10.1.0",
