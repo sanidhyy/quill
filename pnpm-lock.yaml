@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ai-sdk/openai':
-        specifier: ^4.0.42
-        version: 4.0.42(zod@4.6.1)
+        specifier: ^4.0.65
+        version: 4.0.65(zod@4.6.1)
       '@hookform/resolvers':
         specifier: ^5.9.1
         version: 5.9.1(@sinclair/typebox@0.29.6)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(effect@3.17.7)(react-hook-form@7.87.0(react@19.2.8))(valibot@1.4.2(typescript@6.0.3))(zod@4.6.1)
@@ -22,7 +22,7 @@ importers:
         version: 0.0.28(encoding@0.1.13)
       '@langchain/pinecone':
         specifier: ^0.0.4
-        version: 0.0.4(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+        version: 0.0.4(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       '@mantine/hooks':
         specifier: ^9.6.1
         version: 9.6.1(react@19.2.8)
@@ -81,8 +81,8 @@ importers:
         specifier: ^0.6.1
         version: 0.6.1
       ai:
-        specifier: ^7.0.32
-        version: 7.0.32(zod@4.6.1)
+        specifier: ^7.0.97
+        version: 7.0.97(zod@4.6.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -97,7 +97,7 @@ importers:
         version: 17.4.2
       langchain:
         specifier: ^0.1.33
-        version: 0.1.37(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.0)(zod@4.6.1))(pdf-parse@2.4.5)(pg@8.23.0)
+        version: 0.1.37(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.1)(zod@4.6.1))(pdf-parse@2.4.5)(pg@8.23.0)
       lucide-react:
         specifier: ^1.44.0
         version: 1.44.0(react@19.2.8)
@@ -109,7 +109,7 @@ importers:
         version: 0.4.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       openai:
         specifier: ^7.13.0
-        version: 7.13.0(undici@7.29.0)(zod@4.6.1)
+        version: 7.13.0(undici@7.29.1)(zod@4.6.1)
       pdf-parse:
         specifier: ^2.4.5
         version: 2.4.5
@@ -198,36 +198,26 @@ importers:
 
 packages:
 
-  '@ai-sdk/gateway@4.0.24':
-    resolution: {integrity: sha512-RRNCwwYSMxN1SOskxqjyA9LZMuOs3J/fjP8jiB/akWG21jRdUkCcnO9paoiTFVjqnoJMIazrcqbeRfbSGG/PSQ==}
+  '@ai-sdk/gateway@4.0.78':
+    resolution: {integrity: sha512-fcamzmFlcy+c/tIc7QcATLe/kArgSVGQ1QxaddMjhOSX8zypc2hmD5sHB2bp1DSFcSxDD32d6usF9a7xLCTULg==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/openai@4.0.42':
-    resolution: {integrity: sha512-ZxDca6jJalYuXrIGVrw6dnkpz1Io9AWy+/b/wVWIbjigHCbd+zWLpPi8NnK0OFU+U3YCpP+KWfUvEnG5pFhltA==}
+  '@ai-sdk/openai@4.0.65':
+    resolution: {integrity: sha512-rpk1Tv7TR0H338zTKmSVMxv4yo++HDOxioiuvBySb8cWkx2fS10tWl/5cEwL0diJbcV/+p3+9gpIOre52UoQJA==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/provider-utils@5.0.11':
-    resolution: {integrity: sha512-7/96wE+ZsKB35iS9ASyllrE4Ym/EolXEB7AkuJ5FI++fmS85BVTAs77890C+1Z2jwHfBKjBQSBmsliOsAh0iFQ==}
+  '@ai-sdk/provider-utils@5.0.39':
+    resolution: {integrity: sha512-VIFp4Qv3j+V941crFB1y2VG5yeGbeLOFRxiPaZJETkkpo1H5WviLx6H5yRkFkrXIGxnTGygKsPgCAJG0X61Auw==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/provider-utils@5.0.27':
-    resolution: {integrity: sha512-EzAn4pdgG5g0xXtH6lE2zyNmfjDQIDjATkfqzuidEI35g++hh4+07vnjzkT/RmGmIClPZiRj/Q2GMPV2V7mkHw==}
-    engines: {node: '>=22'}
-    peerDependencies:
-      zod: ^3.25.76 || ^4.1.8
-
-  '@ai-sdk/provider@4.0.3':
-    resolution: {integrity: sha512-e0CpNWJUY7OxAFAnCZkw+ri9QOHWwTs1tXP42782KFGCU07qt8NiXCrCVowyCB5dP2r5/Uls+g2oPd8kOJn9dw==}
-    engines: {node: '>=22'}
-
-  '@ai-sdk/provider@4.0.7':
-    resolution: {integrity: sha512-6or44XprPzKbr8zkmzosowSE0pxkvJcoojBL+mCZvPUt3kvXp3XSNqeVun9golb1acEfSo6yaEBRT18h2VU+1Q==}
+  '@ai-sdk/provider@4.0.13':
+    resolution: {integrity: sha512-sJvnbFIFLzmKFXIjfwS8XCOAj6puHCawItwvA9PBZgk2f/l/TiC4OSfK3ueDbUVXfRCOn5eJN97EIF10toIOmQ==}
     engines: {node: '>=22'}
 
   '@alloc/quick-lru@5.2.0':
@@ -2154,8 +2144,8 @@ packages:
     resolution: {integrity: sha512-kja8j7PjmncONqaTsB8fQ+wE2mSU2DJ9D4XKoJ5PFWIdRMa6SLSN1ff4mOr4jCbfRSsxR4keIiySJU0N9T5hIQ==}
     engines: {node: '>= 8.0.0'}
 
-  ai@7.0.32:
-    resolution: {integrity: sha512-EO2a9fv/a9upaabhgFNeoOzOzbWQufhG4Edl6bsVXlftO6Tens+Q/vijEIf6AP1mQMNaAJXxmSX1xR3Su+2jXw==}
+  ai@7.0.97:
+    resolution: {integrity: sha512-tQGZ234p/bk5X/LNQdB43a5/z1Bve7wK0EOR1AwN6xrosZih4MIC/3pXhcnytcpBJHMbhLISW6J1dFTd/tnwPA==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -2816,10 +2806,6 @@ packages:
 
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
-
-  eventsource-parser@3.1.0:
-    resolution: {integrity: sha512-kJezFj9YFAMLeORyi7aCLxLbD5/qWMQnoMVlVPyHIll7lgRJCc3JVln9Vgl9nwQi0YkMnhdGTMNn7CkRRAptMg==}
-    engines: {node: '>=18.0.0'}
 
   eventsource-parser@3.1.1:
     resolution: {integrity: sha512-EKN1vKAMcZ8MlYMpaNuxN6R9yakzH6uajHcHVTqWJzvu5pWw9DyhbP35HH8MVBQ+dZjAfDxk+A8NiR9KWaXiyQ==}
@@ -4593,8 +4579,8 @@ packages:
   undici-types@8.9.0:
     resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
-  undici@7.29.0:
-    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
+  undici@7.29.1:
+    resolution: {integrity: sha512-RYONW2MeafgYlkVOKYKkA/Ag7BmXqgIWCa8t1m0JcxrQg9pI9lEqRhAOruOBCbAohOa/gkCF+iPi9hrgvTzu6Q==}
     engines: {node: '>=20.18.1'}
 
   unified@11.0.5:
@@ -4805,41 +4791,29 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/gateway@4.0.24(zod@4.6.1)':
+  '@ai-sdk/gateway@4.0.78(zod@4.6.1)':
     dependencies:
-      '@ai-sdk/provider': 4.0.3
-      '@ai-sdk/provider-utils': 5.0.11(zod@4.6.1)
+      '@ai-sdk/provider': 4.0.13
+      '@ai-sdk/provider-utils': 5.0.39(zod@4.6.1)
       '@vercel/oidc': 3.2.0
       zod: 4.6.1
 
-  '@ai-sdk/openai@4.0.42(zod@4.6.1)':
+  '@ai-sdk/openai@4.0.65(zod@4.6.1)':
     dependencies:
-      '@ai-sdk/provider': 4.0.7
-      '@ai-sdk/provider-utils': 5.0.27(zod@4.6.1)
+      '@ai-sdk/provider': 4.0.13
+      '@ai-sdk/provider-utils': 5.0.39(zod@4.6.1)
       zod: 4.6.1
 
-  '@ai-sdk/provider-utils@5.0.11(zod@4.6.1)':
+  '@ai-sdk/provider-utils@5.0.39(zod@4.6.1)':
     dependencies:
-      '@ai-sdk/provider': 4.0.3
-      '@standard-schema/spec': 1.1.0
-      '@workflow/serde': 4.1.0
-      eventsource-parser: 3.1.0
-      zod: 4.6.1
-
-  '@ai-sdk/provider-utils@5.0.27(zod@4.6.1)':
-    dependencies:
-      '@ai-sdk/provider': 4.0.7
+      '@ai-sdk/provider': 4.0.13
       '@standard-schema/spec': 1.1.0
       '@workflow/serde': 4.1.0
       eventsource-parser: 3.1.1
-      undici: 7.29.0
+      undici: 7.29.1
       zod: 4.6.1
 
-  '@ai-sdk/provider@4.0.3':
-    dependencies:
-      json-schema: 0.4.0
-
-  '@ai-sdk/provider@4.0.7':
+  '@ai-sdk/provider@4.0.13':
     dependencies:
       json-schema: 0.4.0
 
@@ -5243,13 +5217,13 @@ snapshots:
       '@kinde/jwt-decoder': 0.2.4
       jsrsasign: 11.1.5
 
-  '@langchain/community@0.0.57(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.0)(zod@4.6.1))(pg@8.23.0)':
+  '@langchain/community@0.0.57(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.1)(zod@4.6.1))(pg@8.23.0)':
     dependencies:
-      '@langchain/core': 0.1.63(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      '@langchain/core': 0.1.63(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       '@langchain/openai': 0.0.28(encoding@0.1.13)
       expr-eval: 2.0.2
       flat: 5.0.2
-      langsmith: 0.1.68(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      langsmith: 0.1.68(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       uuid: 9.0.1
       zod: 3.25.76
       zod-to-json-schema: 3.25.2(zod@3.25.76)
@@ -5280,13 +5254,13 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/core@0.1.63(openai@7.13.0(undici@7.29.0)(zod@4.6.1))':
+  '@langchain/core@0.1.63(openai@7.13.0(undici@7.29.1)(zod@4.6.1))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.21
-      langsmith: 0.1.68(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      langsmith: 0.1.68(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       ml-distance: 4.0.1
       mustache: 4.2.0
       p-queue: 6.6.2
@@ -5297,13 +5271,13 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/core@0.2.36(openai@7.13.0(undici@7.29.0)(zod@4.6.1))':
+  '@langchain/core@0.2.36(openai@7.13.0(undici@7.29.1)(zod@4.6.1))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.21
-      langsmith: 0.1.68(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      langsmith: 0.1.68(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -5324,18 +5298,18 @@ snapshots:
       - encoding
       - ws
 
-  '@langchain/pinecone@0.0.4(openai@7.13.0(undici@7.29.0)(zod@4.6.1))':
+  '@langchain/pinecone@0.0.4(openai@7.13.0(undici@7.29.1)(zod@4.6.1))':
     dependencies:
-      '@langchain/core': 0.1.63(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      '@langchain/core': 0.1.63(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       '@pinecone-database/pinecone': 2.2.2
       flat: 5.0.2
       uuid: 9.0.1
     transitivePeerDependencies:
       - openai
 
-  '@langchain/textsplitters@0.0.3(openai@7.13.0(undici@7.29.0)(zod@4.6.1))':
+  '@langchain/textsplitters@0.0.3(openai@7.13.0(undici@7.29.1)(zod@4.6.1))':
     dependencies:
-      '@langchain/core': 0.2.36(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      '@langchain/core': 0.2.36(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       js-tiktoken: 1.0.21
     transitivePeerDependencies:
       - openai
@@ -6427,11 +6401,11 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
-  ai@7.0.32(zod@4.6.1):
+  ai@7.0.97(zod@4.6.1):
     dependencies:
-      '@ai-sdk/gateway': 4.0.24(zod@4.6.1)
-      '@ai-sdk/provider': 4.0.3
-      '@ai-sdk/provider-utils': 5.0.11(zod@4.6.1)
+      '@ai-sdk/gateway': 4.0.78(zod@4.6.1)
+      '@ai-sdk/provider': 4.0.13
+      '@ai-sdk/provider-utils': 5.0.39(zod@4.6.1)
       zod: 4.6.1
 
   ajv@6.14.0:
@@ -7238,8 +7212,6 @@ snapshots:
 
   eventemitter3@4.0.7: {}
 
-  eventsource-parser@3.1.0: {}
-
   eventsource-parser@3.1.1: {}
 
   expr-eval@2.0.2: {}
@@ -7717,19 +7689,19 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  langchain@0.1.37(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.0)(zod@4.6.1))(pdf-parse@2.4.5)(pg@8.23.0):
+  langchain@0.1.37(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(ignore@5.3.2)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.1)(zod@4.6.1))(pdf-parse@2.4.5)(pg@8.23.0):
     dependencies:
       '@anthropic-ai/sdk': 0.9.1(encoding@0.1.13)
-      '@langchain/community': 0.0.57(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.0)(zod@4.6.1))(pg@8.23.0)
-      '@langchain/core': 0.1.63(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      '@langchain/community': 0.0.57(@neondatabase/serverless@1.1.0)(@pinecone-database/pinecone@2.2.2)(encoding@0.1.13)(lodash@4.18.1)(mysql2@3.15.3)(openai@7.13.0(undici@7.29.1)(zod@4.6.1))(pg@8.23.0)
+      '@langchain/core': 0.1.63(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       '@langchain/openai': 0.0.28(encoding@0.1.13)
-      '@langchain/textsplitters': 0.0.3(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      '@langchain/textsplitters': 0.0.3(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.21
       js-yaml: 4.1.1
       jsonpointer: 5.0.1
       langchainhub: 0.0.11
-      langsmith: 0.1.68(openai@7.13.0(undici@7.29.0)(zod@4.6.1))
+      langsmith: 0.1.68(openai@7.13.0(undici@7.29.1)(zod@4.6.1))
       ml-distance: 4.0.1
       openapi-types: 12.1.3
       p-retry: 4.6.2
@@ -7826,7 +7798,7 @@ snapshots:
     optionalDependencies:
       openai: 4.104.0(encoding@0.1.13)(zod@3.25.76)
 
-  langsmith@0.1.68(openai@7.13.0(undici@7.29.0)(zod@4.6.1)):
+  langsmith@0.1.68(openai@7.13.0(undici@7.29.1)(zod@4.6.1)):
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
@@ -7835,7 +7807,7 @@ snapshots:
       semver: 7.8.0
       uuid: 10.0.0
     optionalDependencies:
-      openai: 7.13.0(undici@7.29.0)(zod@4.6.1)
+      openai: 7.13.0(undici@7.29.1)(zod@4.6.1)
 
   language-subtag-registry@0.3.23: {}
 
@@ -8330,9 +8302,9 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  openai@7.13.0(undici@7.29.0)(zod@4.6.1):
+  openai@7.13.0(undici@7.29.1)(zod@4.6.1):
     optionalDependencies:
-      undici: 7.29.0
+      undici: 7.29.1
       zod: 4.6.1
 
   openapi-types@12.1.3: {}
@@ -9161,7 +9133,7 @@ snapshots:
 
   undici-types@8.9.0: {}
 
-  undici@7.29.0: {}
+  undici@7.29.1: {}
 
   unified@11.0.5:
     dependencies:

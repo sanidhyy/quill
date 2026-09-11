@@ -15,7 +15,7 @@
     "postinstall": "pnpm run db:generate"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^4.0.42",
+    "@ai-sdk/openai": "^4.0.65",
     "@hookform/resolvers": "^5.9.1",
     "@kinde-oss/kinde-auth-nextjs": "^2.13.1",
     "@langchain/openai": "^0.0.28",
@@ -39,7 +39,7 @@
     "@trpc/server": "^11.18.0",
     "@uploadthing/react": "^7.3.3",
     "@vercel/config": "^0.6.1",
-    "ai": "^7.0.32",
+    "ai": "^7.0.97",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
