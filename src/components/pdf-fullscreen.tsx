@@ -50,6 +50,7 @@ export const PdfFullscreen = ({ fileUrl }: PdfFullscreenProps) => {
         <SimpleBar autoHide={false} className="max-h-[calc(100vh-10rem)] mt-6">
           <div ref={ref}>
             <Document
+              suspense={false}
               loading={
                 <div className="flex justify-center">
                   <Loader2 className="my-24 h-6 w-6 animate-spin" />
