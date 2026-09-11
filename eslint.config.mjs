@@ -13,5 +13,12 @@ export default defineConfig([
       "react-hooks/set-state-in-effect": "off",
       "react-hooks/refs": "off",
     },
+    ignores: [
+      ".next/**",
+      "out/**",
+      "build/**",
+      "next-env.d.ts",
+      "src/generated/**",
+    ],
   },
 ]);
