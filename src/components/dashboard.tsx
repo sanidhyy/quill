@@ -47,7 +47,7 @@ export const Dashboard = ({ subscriptionPlan }: DashboardProps) => {
               .map((file) => (
                 <li
                   key={file.id}
-                  className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow transition hover:shadow-lg"
+                  className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow-sm transition hover:shadow-lg"
                 >
                   <Link
                     href={`/dashboard/${file.id}`}
@@ -56,7 +56,7 @@ export const Dashboard = ({ subscriptionPlan }: DashboardProps) => {
                     <div className="pt-6 px-6 flex w-full items-center justify-between space-x-6">
                       <div
                         aria-hidden
-                        className="h-10 w-10 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500"
+                        className="h-10 w-10 shrink-0 rounded-full bg-linear-to-r from-cyan-500 to-blue-500"
                       />
 
                       <div className="flex-1 truncate">
