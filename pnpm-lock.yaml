@@ -78,8 +78,8 @@ importers:
         specifier: ^7.3.3
         version: 7.3.3(next@16.3.4(@babel/core@7.29.7(supports-color@7.2.0))(@opentelemetry/api@1.9.0)(@types/node@26.5.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)(uploadthing@7.7.4(next@16.3.4(@babel/core@7.29.7(supports-color@7.2.0))(@opentelemetry/api@1.9.0)(@types/node@26.5.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(tailwindcss@3.4.19(yaml@2.8.3)))
       '@vercel/config':
-        specifier: ^0.6.1
-        version: 0.6.1
+        specifier: ^0.7.0
+        version: 0.7.0
       ai:
         specifier: ^7.0.97
         version: 7.0.97(zod@4.6.1)
@@ -2191,8 +2191,8 @@ packages:
   '@uploadthing/shared@7.1.10':
     resolution: {integrity: sha512-R/XSA3SfCVnLIzFpXyGaKPfbwlYlWYSTuGjTFHuJhdAomuBuhopAHLh2Ois5fJibAHzi02uP1QCKbgTAdmArqg==}
 
-  '@vercel/config@0.6.1':
-    resolution: {integrity: sha512-t/+LQFT0zIN2U2y0fIPC3jI/Ms2OowSOIHy7yGKlrH96YIYGNNHgfx6TZGHAMvIq9ClLBeatXWf6fbKuio93cA==}
+  '@vercel/config@0.7.0':
+    resolution: {integrity: sha512-aWwF0zTnkfgn0t9/7inwyEjyY781thrgFe0PTaVwdyy0vmxZB+FF44EYIKKmUyIF6hv7HqgOSU7T0KZRnQZPWA==}
     hasBin: true
 
   '@vercel/oidc@3.2.0':
@@ -6516,7 +6516,7 @@ snapshots:
       effect: 3.17.7
       sqids: 0.3.0
 
-  '@vercel/config@0.6.1':
+  '@vercel/config@0.7.0':
     dependencies:
       '@vercel/routing-utils': 6.5.0
       pretty-cache-header: 1.0.0
