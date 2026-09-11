@@ -1,7 +1,8 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { PDFLoader } from "langchain/document_loaders/fs/pdf";
+import { Document } from "@langchain/core/documents";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PineconeStore } from "@langchain/pinecone";
+import { PDFParse } from "pdf-parse";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
@@ -59,13 +60,23 @@ const onUploadComplete = async ({
 
   try {
     const response = await fetch(createdFile.url);
-    const blob = await response.blob();
+    const data = new Uint8Array(await response.arrayBuffer());
 
-    // load pdf into memory
-    const loader = new PDFLoader(blob);
+    // load pdf into memory and extract page-level text
+    const parser = new PDFParse({ data });
+    const textResult = await parser.getText();
+    await parser.destroy();
 
-    // extract pdf page level text
-    const pageLevelDocs = await loader.load();
+    const pageLevelDocs = textResult.pages.map(
+      (page) =>
+        new Document({
+          pageContent: page.text,
+          metadata: {
+            source: createdFile!.url,
+            loc: { pageNumber: page.num },
+          },
+        }),
+    );
 
     // pdf page length
     const pageAmt = pageLevelDocs.length;
@@ -92,10 +103,10 @@ const onUploadComplete = async ({
 
     // vectorize and index entire document
     const pinecone = getPineconeClient();
-    const pineconeIndex = pinecone.Index("quill");
+    const pineconeIndex = pinecone.index("quill");
 
     const embeddings = new OpenAIEmbeddings({
-      openAIApiKey: process.env.OPENAI_API_KEY!,
+      apiKey: process.env.OPENAI_API_KEY!,
     });
 
     await PineconeStore.fromDocuments(pageLevelDocs, embeddings, {

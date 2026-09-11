@@ -43,11 +43,11 @@ export async function POST(req: NextRequest) {
 
   // vectorize message
   const embeddings = new OpenAIEmbeddings({
-    openAIApiKey: process.env.OPENAI_API_KEY!,
+    apiKey: process.env.OPENAI_API_KEY!,
   });
 
   const pinecone = getPineconeClient();
-  const pineconeIndex = pinecone.Index("quill");
+  const pineconeIndex = pinecone.index("quill");
 
   const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
     pineconeIndex,
