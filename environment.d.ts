@@ -13,11 +13,9 @@ declare global {
       // app base url
       NEXT_PUBLIC_BASE_URL: string;
 
-      // pinecone api key
-      PINECONE_API_KEY: string;
-
-      // openai api key
-      OPENAI_API_KEY: string;
+      // encrypted user API keys cookie
+      AI_SETTINGS_COOKIE_NAME: string;
+      VERIFICATION_SECRET: string;
 
       // stripe secret key, price id and webhook secret
       STRIPE_SECRET_KEY: string;

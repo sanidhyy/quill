@@ -10,6 +10,13 @@ export function absoluteUrl(path: string) {
   return `${process.env.NEXT_PUBLIC_BASE_URL}${path}`;
 }
 
+export function getSecureCookieName(cookieName: string) {
+  const baseUrl = absoluteUrl("");
+  const isSecure = baseUrl.startsWith("https://");
+
+  return isSecure ? `__Secure-${cookieName}` : cookieName;
+}
+
 export function constructMetadata({
   title = "Quill - The SaaS for Students",
   description = "Quill is an open-source software to make chatting to your PDF files easy.",
