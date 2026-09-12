@@ -59,7 +59,7 @@ export const ChatInput = ({ isDisabled }: ChatInputProps) => {
 
                   textareaRef.current?.focus();
                 }}
-                className="absolute bottom-1.5 right-[8px]"
+                className="absolute bottom-1.5 right-2"
                 aria-label="Send Message..."
                 title="Send Message..."
               >
