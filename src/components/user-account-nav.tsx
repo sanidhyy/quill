@@ -57,9 +57,7 @@ export const UserAccountNav = async ({
           <div className="flex flex-col space-y-0.5 leading-none">
             {name && <p className="font-medium text-sm text-black">{name}</p>}
             {email && (
-              <p className="w-[200px] truncate text-xs text-zinc-700">
-                {email}
-              </p>
+              <p className="w-50 truncate text-xs text-zinc-700">{email}</p>
             )}
           </div>
         </div>
@@ -68,6 +66,10 @@ export const UserAccountNav = async ({
 
         <DropdownMenuItem asChild>
           <Link href="/dashboard">Dashboard</Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem asChild>
+          <Link href="/dashboard/settings">Settings</Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
