@@ -29,6 +29,9 @@ importers:
       '@mantine/hooks':
         specifier: ^9.6.1
         version: 9.6.1(react@19.3.0)
+      '@napi-rs/canvas':
+        specifier: ^1.0.9
+        version: 1.0.9
       '@pinecone-database/pinecone':
         specifier: ^5.1.2
         version: 5.1.2
@@ -4903,7 +4906,6 @@ snapshots:
       '@napi-rs/canvas-linux-x64-musl': 1.0.9
       '@napi-rs/canvas-win32-arm64-msvc': 1.0.9
       '@napi-rs/canvas-win32-x64-msvc': 1.0.9
-    optional: true
 
   '@napi-rs/wasm-runtime@1.2.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:

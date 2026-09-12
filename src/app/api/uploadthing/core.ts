@@ -1,13 +1,8 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { Document } from "@langchain/core/documents";
-import { OpenAIEmbeddings } from "@langchain/openai";
-import { PineconeStore } from "@langchain/pinecone";
-import { PDFParse } from "pdf-parse";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
 import { db } from "@/db";
-import { getPineconeClient } from "@/lib/pinecone";
 import { File } from "@/generated/prisma/client";
 import { getUserSubscriptionPlan } from "@/lib/stripe";
 import { PLANS } from "@/config/stripe";
@@ -59,6 +54,16 @@ const onUploadComplete = async ({
   }
 
   try {
+    // Lazy-load so layout/SSR (extractRouterConfig) never pulls pdfjs/canvas
+    const [{ Document }, { OpenAIEmbeddings }, { PineconeStore }, { PDFParse }] =
+      await Promise.all([
+        import("@langchain/core/documents"),
+        import("@langchain/openai"),
+        import("@langchain/pinecone"),
+        import("pdf-parse/worker").then(async () => import("pdf-parse")),
+      ]);
+    const { getPineconeClient } = await import("@/lib/pinecone");
+
     const response = await fetch(createdFile.url);
     const data = new Uint8Array(await response.arrayBuffer());
 

@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Keep pdf-parse + native canvas out of the Next bundle (required on Vercel)
+  serverExternalPackages: ["pdf-parse", "@napi-rs/canvas", "pdfjs-dist"],
   async redirects() {
     return [
       {
