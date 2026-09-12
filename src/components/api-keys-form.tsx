@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { EyeIcon, EyeOffIcon, Loader2, Trash2Icon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -34,7 +35,6 @@ import {
   apiKeysFormSchema,
   type ApiKeysFormValues,
 } from "@/lib/validators/api-keys-validator";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 type ApiKeysFormProps = {
   initialValues: ApiKeysFormValues;
