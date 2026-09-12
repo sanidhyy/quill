@@ -1,6 +1,4 @@
-"use client";
-
-import { type Dispatch, type SetStateAction, useState } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -77,6 +75,7 @@ export const DeleteFileModal = ({
               aria-disabled={isPending}
               onClick={onClose}
               variant="ghost"
+              className="hover:bg-background"
             >
               Cancel
             </Button>

@@ -10,22 +10,12 @@ import { EyeIcon, EyeOffIcon, Loader2, Trash2Icon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -70,6 +60,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
     pineconeApiKey: false,
   });
   const [isRemoving, setIsRemoving] = useState(false);
+  const [isRemoveOpen, setIsRemoveOpen] = useState(false);
 
   const form = useForm<ApiKeysFormValues>({
     resolver: zodResolver(apiKeysFormSchema),
@@ -126,6 +117,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
         pineconeApiKey: "",
         pineconeIndex: "",
       });
+      setIsRemoveOpen(false);
       toast.success("API keys removed successfully.");
       router.refresh();
     } catch (error: unknown) {
@@ -303,44 +295,63 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
 
         <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
           {hasSavedKeys ? (
-            <AlertDialog>
-              <AlertDialogTrigger asChild>
-                <Button
-                  type="button"
-                  variant="destructive"
-                  disabled={isLoading}
-                  aria-disabled={isLoading}
-                >
-                  <Trash2Icon className="mr-2 h-4 w-4" />
-                  Remove API Keys
-                </Button>
-              </AlertDialogTrigger>
+            <>
+              <Button
+                type="button"
+                variant="destructive"
+                disabled={isLoading}
+                aria-disabled={isLoading}
+                onClick={() => setIsRemoveOpen(true)}
+              >
+                <Trash2Icon className="mr-2 h-4 w-4" />
+                Remove API Keys
+              </Button>
 
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>Remove API Keys</AlertDialogTitle>
+              <Dialog
+                open={isRemoveOpen || isRemoving}
+                onOpenChange={(v) => {
+                  if (!v && !isRemoving) setIsRemoveOpen(v);
+                }}
+              >
+                <DialogContent className="p-0 overflow-hidden">
+                  <DialogHeader className="pt-8 px-6">
+                    <DialogTitle className="text-2xl text-center font-bold">
+                      Remove API Keys
+                    </DialogTitle>
 
-                  <AlertDialogDescription>
-                    Are you sure you want to remove your API keys? Upload and
-                    chat will stop working until you add them again.
-                  </AlertDialogDescription>
-                </AlertDialogHeader>
+                    <DialogDescription className="text-center">
+                      Are you sure you want to do this? <br />
+                      Upload and chat will stop working until you add your API
+                      keys again.
+                    </DialogDescription>
+                  </DialogHeader>
 
-                <AlertDialogFooter>
-                  <AlertDialogCancel disabled={isLoading}>
-                    Cancel
-                  </AlertDialogCancel>
-
-                  <AlertDialogAction
-                    className={buttonVariants({ variant: "danger" })}
-                    disabled={isLoading}
-                    onClick={onRemove}
-                  >
-                    Remove
-                  </AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
+                  <DialogFooter className="bg-gray-100/90 px-6 py-4">
+                    <div className="flex items-center justify-between w-full">
+                      <Button
+                        type="button"
+                        disabled={isRemoving}
+                        aria-disabled={isRemoving}
+                        onClick={() => setIsRemoveOpen(false)}
+                        variant="ghost"
+                        className="hover:bg-background"
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="button"
+                        disabled={isRemoving}
+                        aria-disabled={isRemoving}
+                        onClick={onRemove}
+                        variant="danger"
+                      >
+                        Confirm
+                      </Button>
+                    </div>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
+            </>
           ) : (
             <div />
           )}
