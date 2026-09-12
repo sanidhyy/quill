@@ -1,12 +1,14 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { openai as openaiProvider } from "@ai-sdk/openai";
+import { createOpenAI } from "@ai-sdk/openai";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PineconeStore } from "@langchain/pinecone";
 import { createTextStreamResponse, streamText, toTextStream } from "ai";
 import { NextResponse, type NextRequest } from "next/server";
 
+import { API_KEYS_REQUIRED_MESSAGE } from "@/config/api-keys";
 import { db } from "@/db";
 import { getPineconeClient } from "@/lib/pinecone";
+import { getUserApiKeys } from "@/lib/user-api-keys";
 import { sendMessageValidator } from "@/lib/validators/send-message-validator";
 
 export async function POST(req: NextRequest) {
@@ -20,6 +22,11 @@ export async function POST(req: NextRequest) {
   if (!user?.id) return new NextResponse("Unauthorized.", { status: 401 });
 
   const { id: userId } = user;
+
+  const apiKeys = await getUserApiKeys();
+  if (!apiKeys) {
+    return new NextResponse(API_KEYS_REQUIRED_MESSAGE, { status: 400 });
+  }
 
   const { fileId, message } = sendMessageValidator.parse(body);
 
@@ -43,11 +50,11 @@ export async function POST(req: NextRequest) {
 
   // vectorize message
   const embeddings = new OpenAIEmbeddings({
-    apiKey: process.env.OPENAI_API_KEY!,
+    apiKey: apiKeys.openaiApiKey,
   });
 
-  const pinecone = getPineconeClient();
-  const pineconeIndex = pinecone.index("quill");
+  const pinecone = getPineconeClient(apiKeys.pineconeApiKey);
+  const pineconeIndex = pinecone.index(apiKeys.pineconeIndex);
 
   const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
     pineconeIndex,
@@ -72,8 +79,12 @@ export async function POST(req: NextRequest) {
     content: msg.text,
   }));
 
+  const openai = createOpenAI({
+    apiKey: apiKeys.openaiApiKey,
+  });
+
   const result = streamText({
-    model: openaiProvider("gpt-4o"),
+    model: openai("gpt-4o"),
     temperature: 0,
     system:
       "Use the following pieces of context (or previous conversaton if needed) to answer the users question in markdown format.",

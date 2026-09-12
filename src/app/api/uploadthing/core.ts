@@ -54,6 +54,22 @@ const onUploadComplete = async ({
   }
 
   try {
+    const { getUserApiKeys } = await import("@/lib/user-api-keys");
+    const apiKeys = await getUserApiKeys();
+
+    if (!apiKeys) {
+      await db.file.update({
+        data: {
+          uploadStatus: "FAILED",
+        },
+        where: {
+          id: createdFile.id,
+          userId: metadata.userId,
+        },
+      });
+      return;
+    }
+
     // Lazy-load so layout/SSR (extractRouterConfig) never pulls pdfjs/canvas
     const [{ Document }, { OpenAIEmbeddings }, { PineconeStore }, { PDFParse }] =
       await Promise.all([
@@ -104,14 +120,15 @@ const onUploadComplete = async ({
           userId,
         },
       });
+      return;
     }
 
     // vectorize and index entire document
-    const pinecone = getPineconeClient();
-    const pineconeIndex = pinecone.index("quill");
+    const pinecone = getPineconeClient(apiKeys.pineconeApiKey);
+    const pineconeIndex = pinecone.index(apiKeys.pineconeIndex);
 
     const embeddings = new OpenAIEmbeddings({
-      apiKey: process.env.OPENAI_API_KEY!,
+      apiKey: apiKeys.openaiApiKey,
     });
 
     await PineconeStore.fromDocuments(pageLevelDocs, embeddings, {

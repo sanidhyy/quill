@@ -13,9 +13,9 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { useUploadThing } from "@/lib/uploadthing";
+import { useRequireApiKeys } from "@/hooks/use-require-api-keys";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const FREE_MAX_FILE_SIZE_MB = 4;
@@ -291,9 +291,16 @@ const UploadDropzone = ({
   );
 };
 
-export const UploadButton = ({ isSubscribed }: { isSubscribed: boolean }) => {
+export const UploadButton = ({
+  isSubscribed,
+  hasApiKeys,
+}: {
+  isSubscribed: boolean;
+  hasApiKeys: boolean;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const { requireApiKeys } = useRequireApiKeys();
 
   return (
     <Dialog
@@ -302,14 +309,16 @@ export const UploadButton = ({ isSubscribed }: { isSubscribed: boolean }) => {
         if (!v) setIsOpen(v);
       }}
     >
-      <DialogTrigger onClick={() => setIsOpen(true)} asChild>
-        <Button
-          disabled={isOpen || isUploading}
-          aria-disabled={isOpen || isUploading}
-        >
-          Upload PDF
-        </Button>
-      </DialogTrigger>
+      <Button
+        disabled={isOpen || isUploading}
+        aria-disabled={isOpen || isUploading}
+        onClick={() => {
+          if (!requireApiKeys(hasApiKeys)) return;
+          setIsOpen(true);
+        }}
+      >
+        Upload PDF
+      </Button>
 
       <DialogContent>
         <VisuallyHidden>

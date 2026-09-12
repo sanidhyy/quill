@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { Dashboard } from "@/components/dashboard";
 import { db } from "@/db";
 import { getUserSubscriptionPlan } from "@/lib/stripe";
+import { hasUserApiKeys } from "@/lib/user-api-keys";
 
 const DashboardPage = async () => {
   const { getUser } = getKindeServerSession();
@@ -20,8 +21,11 @@ const DashboardPage = async () => {
   if (!dbUser) redirect("/auth-callback?origin=dashboard");
 
   const subscriptionPlan = await getUserSubscriptionPlan();
+  const hasApiKeys = await hasUserApiKeys();
 
-  return <Dashboard subscriptionPlan={subscriptionPlan} />;
+  return (
+    <Dashboard subscriptionPlan={subscriptionPlan} hasApiKeys={hasApiKeys} />
+  );
 };
 
 export default DashboardPage;

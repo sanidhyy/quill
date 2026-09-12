@@ -1,8 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 import { type PropsWithChildren, createContext, useState, useRef } from "react";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 import { trpc } from "@/app/_trpc/client";
+import { API_KEYS_REQUIRED_MESSAGE } from "@/config/api-keys";
 import { INFINITE_QUERY_LIMIT } from "@/config/infinite-query";
 import { AI_RESPONSE_MESSAGE_ID } from "@/config/message";
 import type { Messages } from "@/types/message";
@@ -31,6 +33,7 @@ export const ChatContextProvider = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const backupMessage = useRef("");
+  const router = useRouter();
 
   const utils = trpc.useUtils();
 
@@ -44,7 +47,10 @@ export const ChatContextProvider = ({
         }),
       });
 
-      if (!response.ok) throw new Error("Failed to send message.");
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || "Failed to send message.");
+      }
 
       return response.body;
     },
@@ -182,12 +188,29 @@ export const ChatContextProvider = ({
         );
       }
     },
-    onError: (_error, _var, context) => {
+    onError: (error, _var, context) => {
       setMessage(backupMessage.current);
       utils.getFileMessages.setData(
         { fileId },
         { messages: context?.previousMessages ?? [] },
       );
+
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to send message.";
+
+      if (errorMessage.includes(API_KEYS_REQUIRED_MESSAGE)) {
+        toast.error(API_KEYS_REQUIRED_MESSAGE, {
+          action: {
+            label: "Settings",
+            onClick: () => router.push("/dashboard/settings"),
+          },
+        });
+        return;
+      }
+
+      toast.error("There was a problem sending this message.", {
+        description: "Please refresh this page and try again.",
+      });
     },
     onSettled: async () => {
       setIsLoading(false);

@@ -15,9 +15,13 @@ import { UploadButton } from "./upload-button";
 
 type DashboardProps = {
   subscriptionPlan: Awaited<ReturnType<typeof getUserSubscriptionPlan>>;
+  hasApiKeys: boolean;
 };
 
-export const Dashboard = ({ subscriptionPlan }: DashboardProps) => {
+export const Dashboard = ({
+  subscriptionPlan,
+  hasApiKeys,
+}: DashboardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentlyDeletingFile, setCurrentlyDeletingFile] = useState<{
     id: string;
@@ -32,7 +36,10 @@ export const Dashboard = ({ subscriptionPlan }: DashboardProps) => {
         <div className="mt-8 flex flex-col items-start justify-between gap-4 border-b border-gray-200 pb-5 sm:flex-row sm:items-center sm:gap-0">
           <h1 className="mb-3 font-bold text-5xl text-gray-900">My Files</h1>
 
-          <UploadButton isSubscribed={subscriptionPlan.isSubscribed} />
+          <UploadButton
+            isSubscribed={subscriptionPlan.isSubscribed}
+            hasApiKeys={hasApiKeys}
+          />
         </div>
 
         {/* display all user files */}
