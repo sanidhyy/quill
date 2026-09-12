@@ -18,10 +18,7 @@ type DashboardProps = {
   hasApiKeys: boolean;
 };
 
-export const Dashboard = ({
-  subscriptionPlan,
-  hasApiKeys,
-}: DashboardProps) => {
+export const Dashboard = ({ subscriptionPlan, hasApiKeys }: DashboardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentlyDeletingFile, setCurrentlyDeletingFile] = useState<{
     id: string;
@@ -57,6 +54,7 @@ export const Dashboard = ({
                   className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow-sm transition hover:shadow-lg"
                 >
                   <Link
+                    prefetch
                     href={`/dashboard/${file.id}`}
                     className="flex flex-col gap-2"
                   >

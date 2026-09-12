@@ -26,6 +26,7 @@ const HomePage = () => {
         </p>
 
         <Link
+          prefetch
           href="/dashboard"
           target="_blank"
           className={buttonVariants({
@@ -110,6 +111,7 @@ const HomePage = () => {
               <span className="mt-2 text-zinc-700">
                 Either starting out with a free plan or choose our{" "}
                 <Link
+                  prefetch
                   href="/pricing"
                   className="text-blue-700 underline underline-offset-2"
                 >

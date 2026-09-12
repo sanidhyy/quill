@@ -82,6 +82,7 @@ export const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
             </p>
 
             <Link
+              prefetch
               href="/dashboard"
               className={buttonVariants({
                 variant: "secondary",

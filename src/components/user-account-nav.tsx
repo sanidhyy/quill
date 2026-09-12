@@ -1,6 +1,5 @@
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Gem } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -65,18 +64,24 @@ export const UserAccountNav = async ({
         <DropdownMenuSeparator />
 
         <DropdownMenuItem asChild>
-          <Link href="/dashboard">Dashboard</Link>
+          <Link prefetch href="/dashboard">
+            Dashboard
+          </Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
-          <Link href="/dashboard/settings">Settings</Link>
+          <Link prefetch href="/dashboard/settings">
+            Settings
+          </Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
           {subscriptionPlan?.isSubscribed ? (
-            <Link href="/dashboard/billing">Manage Subscription</Link>
+            <Link prefetch href="/dashboard/billing">
+              Manage Subscription
+            </Link>
           ) : (
-            <Link href="/pricing">
+            <Link prefetch href="/pricing">
               Upgrade <Gem className="text-blue-600 w-4 h-4 ml-1.5" />
             </Link>
           )}

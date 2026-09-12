@@ -1,5 +1,6 @@
 "use client";
 
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { ArrowRight, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -35,6 +36,7 @@ export const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
               <>
                 <li>
                   <Link
+                    prefetch
                     href="/sign-up"
                     onClick={() => closeOnCurrent("/sign-up")}
                     className="flex items-center w-full font-semibold text-green-600"
@@ -48,6 +50,7 @@ export const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
 
                 <li>
                   <Link
+                    prefetch
                     href="/sign-in"
                     onClick={() => closeOnCurrent("/sign-in")}
                     className="flex items-center w-full font-semibold"
@@ -60,6 +63,7 @@ export const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
 
                 <li>
                   <Link
+                    prefetch
                     href="/pricing"
                     onClick={() => closeOnCurrent("/pricing")}
                     className="flex items-center w-full font-semibold"
@@ -72,6 +76,7 @@ export const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
               <>
                 <li>
                   <Link
+                    prefetch
                     href="/dashboard"
                     onClick={() => closeOnCurrent("/dashboard")}
                     className="flex items-center w-full font-semibold"
@@ -83,12 +88,9 @@ export const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
                 <li aria-hidden className="my-3 h-px w-full bg-gray-300" />
 
                 <li>
-                  <Link
-                    href="/sign-out"
-                    className="flex items-center w-full font-semibold"
-                  >
+                  <LogoutLink className="flex items-center w-full font-semibold">
                     Sign out
-                  </Link>
+                  </LogoutLink>
                 </li>
               </>
             )}

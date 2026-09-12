@@ -22,7 +22,7 @@ export const Navbar = async () => {
     <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
         <div className="flex h-14 items-center justify-between border-b border-zinc-200">
-          <Link href="/" className="flex z-40 font-semibold">
+          <Link prefetch href="/" className="flex z-40 font-semibold">
             <span>quill.</span>
           </Link>
 
@@ -33,6 +33,7 @@ export const Navbar = async () => {
               {!user ? (
                 <>
                   <Link
+                    prefetch
                     href="/pricing"
                     className={buttonVariants({
                       variant: "ghost",
@@ -61,6 +62,7 @@ export const Navbar = async () => {
               ) : (
                 <>
                   <Link
+                    prefetch
                     href="/dashboard"
                     className={buttonVariants({
                       variant: "ghost",

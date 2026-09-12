@@ -181,6 +181,7 @@ const PricingPage = async () => {
                   <div className="p-5">
                     {plan === "Free" ? (
                       <Link
+                        prefetch
                         href={user ? "/dashboard" : "/sign-in"}
                         className={buttonVariants({
                           className: "w-full",
@@ -193,6 +194,7 @@ const PricingPage = async () => {
                       <UpgradeButton />
                     ) : (
                       <Link
+                        prefetch
                         href="/sign-in"
                         className={buttonVariants({
                           className: "w-full",
