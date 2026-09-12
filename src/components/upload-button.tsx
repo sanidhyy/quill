@@ -2,8 +2,8 @@
 
 import { Cloud, FileIcon, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { type Dispatch, type SetStateAction, useState } from "react";
-import Dropzone from "react-dropzone";
+import { type Dispatch, type SetStateAction, useRef, useState } from "react";
+import Dropzone, { type FileRejection } from "react-dropzone";
 import { toast } from "sonner";
 
 import { trpc } from "@/app/_trpc/client";
@@ -18,10 +18,85 @@ import {
 import { useUploadThing } from "@/lib/uploadthing";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
+const FREE_MAX_FILE_SIZE_MB = 4;
+const PRO_MAX_FILE_SIZE_MB = 16;
+
 type UploadDropzoneProps = {
   isSubscribed: boolean;
   isUploading: boolean;
   setIsUploading: Dispatch<SetStateAction<boolean>>;
+};
+
+const getDropzoneErrorMessage = (
+  fileRejections: FileRejection[],
+  maxFileSizeMb: number,
+) => {
+  const codes = new Set(
+    fileRejections.flatMap((rejection) =>
+      rejection.errors.map((error) => error.code),
+    ),
+  );
+
+  if (codes.has("file-too-large")) {
+    return `File is too large. Max size is ${maxFileSizeMb}MB.`;
+  }
+
+  if (codes.has("file-invalid-type")) {
+    return "Only PDF files are allowed.";
+  }
+
+  if (codes.has("too-many-files")) {
+    return "Too many files. Please upload one PDF at a time.";
+  }
+
+  return "Unable to upload this file.";
+};
+
+const getUploadThingErrorMessage = (
+  err: { code: string; message: string },
+  maxFileSizeMb: number,
+) => {
+  const details = `${err.code} ${err.message}`.toLowerCase();
+
+  if (
+    err.code === "TOO_LARGE" ||
+    details.includes("filesizemismatch") ||
+    details.includes("too large") ||
+    details.includes("file size")
+  ) {
+    return `File is too large. Max size is ${maxFileSizeMb}MB.`;
+  }
+
+  if (
+    err.code === "TOO_MANY_FILES" ||
+    err.code === "FILE_LIMIT_EXCEEDED" ||
+    details.includes("filecountmismatch")
+  ) {
+    return "Too many files. Please upload one PDF at a time.";
+  }
+
+  if (
+    err.code === "FORBIDDEN" ||
+    details.includes("unauthorized") ||
+    details.includes("forbidden")
+  ) {
+    return "You must be signed in to upload files.";
+  }
+
+  if (
+    details.includes("invalidfiletype") ||
+    details.includes("unknownfiletype") ||
+    details.includes("only pdf") ||
+    details.includes("file type")
+  ) {
+    return "Only PDF files are allowed.";
+  }
+
+  if (err.code === "BAD_REQUEST") {
+    return "Unable to upload this file. Please try a different PDF.";
+  }
+
+  return "Something went wrong while uploading. Please try again.";
 };
 
 const UploadDropzone = ({
@@ -33,34 +108,49 @@ const UploadDropzone = ({
 
   const [error, setError] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
+  const handledUploadErrorRef = useRef(false);
+  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
+    null,
+  );
+
+  const maxFileSizeMb = isSubscribed
+    ? PRO_MAX_FILE_SIZE_MB
+    : FREE_MAX_FILE_SIZE_MB;
+  const maxFileSizeBytes = maxFileSizeMb * 1024 * 1024;
+
+  const clearProgressInterval = () => {
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+      progressIntervalRef.current = null;
+    }
+  };
 
   const { startUpload } = useUploadThing(
     isSubscribed ? "proPlanUploader" : "freePlanUploader",
     {
       onUploadError: (err) => {
+        handledUploadErrorRef.current = true;
+        clearProgressInterval();
         setIsUploading(false);
-        if (err.code === "BAD_REQUEST") setError("Only PDF files are allowed.");
-
-        if (err.code === "INTERNAL_SERVER_ERROR" || err.code === "TOO_LARGE")
-          setError("File is too large.");
-
-        if (err.code === "FILE_LIMIT_EXCEEDED" || err.code === "TOO_MANY_FILES")
-          setError("Too many files.");
+        setUploadProgress(0);
+        setError(getUploadThingErrorMessage(err, maxFileSizeMb));
       },
     },
   );
 
   const startSimulatedProgress = () => {
+    clearProgressInterval();
+
     // reset upload progress
     setError("");
     setUploadProgress(0);
 
     // update progress every half second
-    const interval = setInterval(() => {
+    progressIntervalRef.current = setInterval(() => {
       setUploadProgress((prevUploadProgress) => {
         // stop updating progress if exceeds 95 (taking too long...)
         if (prevUploadProgress >= 95) {
-          clearInterval(interval);
+          clearProgressInterval();
           return prevUploadProgress;
         }
 
@@ -68,8 +158,6 @@ const UploadDropzone = ({
         return prevUploadProgress + 5;
       });
     }, 500);
-
-    return interval;
   };
 
   const { mutate: startPolling } = trpc.getFile.useMutation({
@@ -85,20 +173,36 @@ const UploadDropzone = ({
       accept={{
         "application/pdf": [".pdf"],
       }}
+      maxSize={maxFileSizeBytes}
       multiple={false}
-      onDropRejected={() => setError("Too many files.")}
-      onDrop={async (acceptedFile) => {
+      onDropRejected={(fileRejections) => {
+        clearProgressInterval();
+        setIsUploading(false);
+        setUploadProgress(0);
+        setError(getDropzoneErrorMessage(fileRejections, maxFileSizeMb));
+      }}
+      onDrop={async (acceptedFiles) => {
+        if (acceptedFiles.length === 0) return;
+
+        handledUploadErrorRef.current = false;
         setIsUploading(true);
 
-        const progressInterval = startSimulatedProgress();
+        startSimulatedProgress();
 
         // handle file upload
-        const res = await startUpload(acceptedFile);
+        const res = await startUpload(acceptedFiles);
 
         if (!res) {
-          return toast.error("Something went wrong!", {
-            description: "Please try again later.",
-          });
+          clearProgressInterval();
+          setIsUploading(false);
+
+          if (!handledUploadErrorRef.current) {
+            setError("Something went wrong while uploading. Please try again.");
+            toast.error("Something went wrong!", {
+              description: "Please try again later.",
+            });
+          }
+          return;
         }
 
         const [fileResponse] = res;
@@ -106,12 +210,16 @@ const UploadDropzone = ({
         const key = fileResponse?.key;
 
         if (!key) {
-          return toast.error("Something went wrong!", {
+          clearProgressInterval();
+          setIsUploading(false);
+          setError("Something went wrong while uploading. Please try again.");
+          toast.error("Something went wrong!", {
             description: "Please try again later.",
           });
+          return;
         }
 
-        clearInterval(progressInterval);
+        clearProgressInterval();
         setUploadProgress(100);
 
         startPolling({ key });
@@ -132,7 +240,7 @@ const UploadDropzone = ({
                 </p>
 
                 <p className="text-xs text-zinc-500">
-                  PDF (up to {isSubscribed ? "16" : "4"}MB)
+                  PDF (up to {maxFileSizeMb}MB)
                 </p>
               </div>
 
