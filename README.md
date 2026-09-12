@@ -44,7 +44,6 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 quill/
   |- prisma/
@@ -64,6 +63,7 @@ quill/
     |-- components/
       |--- chat/
       |--- ui/
+      |--- api-keys-form.tsx
       |--- billing-form.tsx
       |--- dashboard.tsx
       |--- delete-file-modal.tsx
@@ -85,6 +85,8 @@ quill/
       |--- stripe.ts
     |-- db/
       |--- index.ts
+    |-- hooks/
+      |--- use-require-api-keys.ts
     |-- lib/
       |--- validators/
       |--- encryption.ts
@@ -114,7 +116,6 @@ quill/
   |- tsconfig.json
   |- vercel.ts
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -274,7 +275,6 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in quill.
 
 <!--- DEPENDENCIES_START --->
-
 - [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^4.0.65
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.9.1
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.13.1
@@ -286,9 +286,11 @@ Useful resources and dependencies that are used in quill.
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^5.1.2
 - [@prisma/adapter-neon](https://www.npmjs.com/package/@prisma/adapter-neon): ^7.10.0
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.0
+- [@radix-ui/react-alert-dialog](https://www.npmjs.com/package/@radix-ui/react-alert-dialog): ^1.1.23
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.2.6
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.23
 - [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.1.24
+- [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.15
 - [@radix-ui/react-progress](https://www.npmjs.com/package/@radix-ui/react-progress): ^1.1.16
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.3.3
 - [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.2.16
@@ -329,6 +331,7 @@ Useful resources and dependencies that are used in quill.
 - [react-pdf](https://www.npmjs.com/package/react-pdf): ^11.0.0
 - [react-resize-detector](https://www.npmjs.com/package/react-resize-detector): ^12.3.0
 - [react-textarea-autosize](https://www.npmjs.com/package/react-textarea-autosize): ^8.5.9
+- [server-only](https://www.npmjs.com/package/server-only): ^0.0.1
 - [simplebar-react](https://www.npmjs.com/package/simplebar-react): ^3.3.2
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.8
 - [stripe](https://www.npmjs.com/package/stripe): ^22.6.2
