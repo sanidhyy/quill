@@ -287,6 +287,7 @@ Useful resources and dependencies that are used in quill.
 - [@langchain/openai](https://www.npmjs.com/package/@langchain/openai): ^1.5.12
 - [@langchain/pinecone](https://www.npmjs.com/package/@langchain/pinecone): ^1.0.3
 - [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.6.1
+- [@napi-rs/canvas](https://www.npmjs.com/package/@napi-rs/canvas): ^1.0.9
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^5.1.2
 - [@prisma/adapter-neon](https://www.npmjs.com/package/@prisma/adapter-neon): ^7.10.0
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.0
