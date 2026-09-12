@@ -1,18 +1,22 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { NextResponse } from "next/server";
+import OpenAI from "openai";
 
 import { clearUserApiKeys, setUserApiKeys } from "@/lib/user-api-keys";
 import { apiKeysFormSchema } from "@/lib/validators/api-keys-validator";
+import { getAISettingsErrorMessage } from "@/lib/utils";
 
 async function validateOpenAIKey(apiKey: string) {
-  const response = await fetch("https://api.openai.com/v1/models", {
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-  });
+  const openai = new OpenAI({ apiKey });
 
-  if (!response.ok) {
-    throw new Error("Invalid OpenAI API key.");
+  try {
+    await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [{ role: "user", content: "hi" }],
+      max_tokens: 1,
+    });
+  } catch (error) {
+    throw new Error(`OpenAI: ${getAISettingsErrorMessage(error)}`);
   }
 }
 

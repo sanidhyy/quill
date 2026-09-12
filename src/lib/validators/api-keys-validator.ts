@@ -5,7 +5,7 @@ export const apiKeysFormSchema = z.object({
     .string()
     .trim()
     .min(12, { message: "Invalid OpenAI API key." })
-    .startsWith("sk-", { message: "Invalid OpenAI API key." }),
+    .startsWith("sk-proj-", { message: "Invalid OpenAI API key." }),
   pineconeApiKey: z
     .string()
     .trim()

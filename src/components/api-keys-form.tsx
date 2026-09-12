@@ -149,7 +149,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
                   <Input
                     type={visibleFields.openaiApiKey ? "text" : "password"}
                     autoComplete="off"
-                    placeholder="sk-..."
+                    placeholder="sk-proj-•••••••••••••••••••••••••••••••"
                     disabled={isLoading}
                     className="pr-10"
                     {...field}
@@ -170,16 +170,25 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
                 </div>
               </FormControl>
               <FormDescription>
-                Get your API key from{" "}
+                Get your API Key from{" "}
                 <Link
-                  href="https://platform.openai.com/api-keys"
+                  href="https://platform.openai.com/account/api-keys"
                   target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4"
+                  rel="noopener noreferrer"
+                  className="font-medium text-muted-foreground underline underline-offset-2 hover:text-foreground"
                 >
                   OpenAI
                 </Link>
-                . Used for embeddings and chat.
+                . Make sure your account has sufficient{" "}
+                <Link
+                  href="https://platform.openai.com/settings/organization/billing/credit-grants"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-muted-foreground underline underline-offset-2 hover:text-foreground"
+                >
+                  credit grants
+                </Link>
+                .
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -197,7 +206,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
                   <Input
                     type={visibleFields.pineconeApiKey ? "text" : "password"}
                     autoComplete="off"
-                    placeholder="pcsk_..."
+                    placeholder="pcsk_•••••••••••••••••••••••••••••••••"
                     disabled={isLoading}
                     className="pr-10"
                     {...field}
@@ -223,7 +232,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
                   href="https://app.pinecone.io"
                   target="_blank"
                   rel="noreferrer"
-                  className="underline underline-offset-4"
+                  className="font-medium text-muted-foreground underline underline-offset-2 hover:text-foreground"
                 >
                   Pinecone
                 </Link>
@@ -254,7 +263,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
                   <DialogTrigger asChild>
                     <button
                       type="button"
-                      className="text-muted-foreground underline underline-offset-4 hover:text-foreground"
+                      className="text-muted-foreground underline underline-offset-2 font-medium hover:text-foreground"
                     >
                       How to create an index?
                     </button>
