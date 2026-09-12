@@ -44,6 +44,7 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 quill/
   |- prisma/
@@ -77,6 +78,7 @@ quill/
       |--- upload-button.tsx
       |--- user-account-nav.tsx
     |-- config/
+      |--- api-keys.ts
       |--- infinite-query.ts
       |--- links.ts
       |--- message.ts
@@ -85,10 +87,11 @@ quill/
       |--- index.ts
     |-- lib/
       |--- validators/
-      |--- openai.ts
+      |--- encryption.ts
       |--- pinecone.ts
       |--- stripe.ts
       |--- uploadthing.ts
+      |--- user-api-keys.ts
       |--- utils.ts
     |-- trpc/
       |--- index.ts
@@ -111,6 +114,7 @@ quill/
   |- tsconfig.json
   |- vercel.ts
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -145,11 +149,9 @@ UPLOADTHING_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 # app base url
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
-# pinecone api key
-PINECONE_API_KEY=xxxxxxxxxx-xxxxx-xxxx-xxxxxx-xxxxxxxxxxx
-
-# openai api key
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# encrypted user API keys cookie (openssl rand -hex 32)
+AI_SETTINGS_COOKIE_NAME=quill_ai_settings
+VERIFICATION_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # stripe secret key, price id and webhook secret
 STRIPE_SECRET_KEY=sk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -211,23 +213,15 @@ STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 - **Instructions**:
   - Simply set `NEXT_PUBLIC_BASE_URL=http://localhost:3000` in your `.env.local` file.
 
-### 10. Pinecone API Key
+### 10. User API Keys Cookie Encryption
 
-- **Environment Variable**: `PINECONE_API_KEY=xxxxxxxxxx-xxxxx-xxxx-xxxxxx-xxxxxxxxxxx`
+- **Environment Variables**:
+  - `AI_SETTINGS_COOKIE_NAME`
+  - `VERIFICATION_SECRET`
 - **Instructions**:
-  - Visit Pinecone's official website and log in to your account.
-  - Navigate to the API or developer section to find your API key.
-  - Retrieve `PINECONE_API_KEY`.
+  - Generate random secrets with `openssl rand -hex 32` for both values.
 
-### 11. OpenAI API Key
-
-- **Environment Variable**: `OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
-- **Instructions**:
-  - Log in to your OpenAI account on the official website.
-  - Navigate to the API or developer dashboard.
-  - Retrieve your API key.
-
-### 12. Stripe
+### 11. Stripe
 
 - **Environment Variables**:
   - `STRIPE_SECRET_KEY`
@@ -280,6 +274,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in quill.
 
 <!--- DEPENDENCIES_START --->
+
 - [@ai-sdk/openai](https://www.npmjs.com/package/@ai-sdk/openai): ^4.0.65
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.9.1
 - [@kinde-oss/kinde-auth-nextjs](https://www.npmjs.com/package/@kinde-oss/kinde-auth-nextjs): ^2.13.1
