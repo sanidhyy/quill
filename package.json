@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "db:push": "prisma db push",
     "db:reset": "prisma migrate reset",
     "db:generate": "prisma generate",
-    "db:studio": "prisma studio",
-    "postinstall": "pnpm run db:generate"
+    "db:studio": "prisma studio"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.65",
