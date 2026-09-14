@@ -11,7 +11,8 @@
     "db:push": "prisma db push",
     "db:reset": "prisma migrate reset",
     "db:generate": "prisma generate",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.65",
