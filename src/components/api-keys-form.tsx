@@ -149,7 +149,7 @@ export const ApiKeysForm = ({ initialValues }: ApiKeysFormProps) => {
                   <Input
                     type={visibleFields.openaiApiKey ? "text" : "password"}
                     autoComplete="off"
-                    placeholder="sk-proj-•••••••••••••••••••••••••••••••"
+                    placeholder="sk-•••••••••••••••••••••••••••••••••••"
                     disabled={isLoading}
                     className="pr-10"
                     {...field}
