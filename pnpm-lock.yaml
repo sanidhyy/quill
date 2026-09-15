@@ -13,7 +13,7 @@ importers:
         version: 4.0.65(zod@4.6.1)
       '@hookform/resolvers':
         specifier: ^5.9.1
-        version: 5.9.1(@sinclair/typebox@0.29.6)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(effect@3.17.7)(react-hook-form@7.87.0(react@19.3.0))(valibot@1.4.2(typescript@6.0.3))(zod@4.6.1)
+        version: 5.9.1(@sinclair/typebox@0.29.6)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(effect@3.17.7)(react-hook-form@7.88.0(react@19.3.0))(valibot@1.4.2(typescript@6.0.3))(zod@4.6.1)
       '@kinde-oss/kinde-auth-nextjs':
         specifier: ^2.13.1
         version: 2.13.1(next@16.3.4(@babel/core@7.29.7(supports-color@7.2.0))(@opentelemetry/api@1.9.0)(@playwright/test@1.63.0)(@types/node@26.5.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -132,8 +132,8 @@ importers:
         specifier: ^20.1.1
         version: 20.1.1(@types/react@19.3.0)(react@19.3.0)
       react-hook-form:
-        specifier: ^7.87.0
-        version: 7.87.0(react@19.3.0)
+        specifier: ^7.88.0
+        version: 7.88.0(react@19.3.0)
       react-loading-skeleton:
         specifier: ^3.5.0
         version: 3.5.0(react@19.3.0)
@@ -3700,8 +3700,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-hook-form@7.87.0:
-    resolution: {integrity: sha512-zhFzWvLxNHH+8839OnZcUxgMZw88ah2jZWDWvKWgF3Tpbnd0vKL+dlcuU3nZVWESZQjd81EW8K+wU+cYfYAc0w==}
+  react-hook-form@7.88.0:
+    resolution: {integrity: sha512-QRaLOWhX93YCnMiRfnOFRSwWXZNt8qhm2JTZwypoDvKpSffTJHmpzMXt8U6PV5UThvL3IiiLDUWe2nHMtz6Mmw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -4550,10 +4550,10 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@hookform/resolvers@5.9.1(@sinclair/typebox@0.29.6)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(effect@3.17.7)(react-hook-form@7.87.0(react@19.3.0))(valibot@1.4.2(typescript@6.0.3))(zod@4.6.1)':
+  '@hookform/resolvers@5.9.1(@sinclair/typebox@0.29.6)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(effect@3.17.7)(react-hook-form@7.88.0(react@19.3.0))(valibot@1.4.2(typescript@6.0.3))(zod@4.6.1)':
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.87.0(react@19.3.0)
+      react-hook-form: 7.88.0(react@19.3.0)
     optionalDependencies:
       '@sinclair/typebox': 0.29.6
       '@standard-schema/spec': 1.1.0
@@ -7856,7 +7856,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.3.0
 
-  react-hook-form@7.87.0(react@19.3.0):
+  react-hook-form@7.88.0(react@19.3.0):
     dependencies:
       react: 19.3.0
 
