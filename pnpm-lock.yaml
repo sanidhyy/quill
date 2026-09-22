@@ -19,13 +19,13 @@ importers:
         version: 2.13.1(next@16.3.5(@babel/core@7.29.7(supports-color@7.2.0))(@opentelemetry/api@1.9.0)(@playwright/test@1.63.0)(@types/node@26.5.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@langchain/core':
         specifier: ^1.2.10
-        version: 1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
+        version: 1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
       '@langchain/openai':
         specifier: ^1.5.12
-        version: 1.5.12(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(undici@7.29.1)(ws@8.21.3)
+        version: 1.5.12(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(undici@7.29.1)(ws@8.21.3)
       '@langchain/pinecone':
         specifier: ^1.0.3
-        version: 1.0.3(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(@pinecone-database/pinecone@5.1.2)
+        version: 1.0.3(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(@pinecone-database/pinecone@5.1.2)
       '@mantine/hooks':
         specifier: ^9.6.1
         version: 9.6.1(react@19.3.0)
@@ -117,8 +117,8 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       openai:
-        specifier: ^7.15.0
-        version: 7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1)
+        specifier: ^7.19.0
+        version: 7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1)
       pdf-parse:
         specifier: ^2.4.5
         version: 2.4.5
@@ -3487,8 +3487,8 @@ packages:
   ohash@2.0.11:
     resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
 
-  openai@7.15.0:
-    resolution: {integrity: sha512-2DIwesnPSduw68MFx7nAdgvshrgvS8WOan5W8+tgUMlAy/tY+Q41g80Pa+w/v64rHA6rtn+dketa8QvMVxU96w==}
+  openai@7.19.0:
+    resolution: {integrity: sha512-MX2s3u2L5racTO0CC/SWpCOasJQBCJrqLKXK+l82cAhdeF8mPMBEe/gxMm0ZFa2xpKpOFLRjxv5afYEZbBXmbQ==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       '@aws-sdk/credential-provider-node': '>=3.972.0 <4'
@@ -4778,12 +4778,12 @@ snapshots:
       '@kinde/jwt-decoder': 0.2.4
       jsrsasign: 11.1.5
 
-  '@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)':
+  '@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@standard-schema/spec': 1.1.0
       js-tiktoken: 1.0.21
-      langsmith: 0.10.2(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
+      langsmith: 0.10.2(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
       mustache: 4.2.0
       p-queue: 6.6.2
       zod: 4.6.1
@@ -4794,11 +4794,11 @@ snapshots:
       - openai
       - ws
 
-  '@langchain/openai@1.5.12(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(undici@7.29.1)(ws@8.21.3)':
+  '@langchain/openai@1.5.12(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(undici@7.29.1)(ws@8.21.3)':
     dependencies:
-      '@langchain/core': 1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
+      '@langchain/core': 1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
       js-tiktoken: 1.0.21
-      openai: 7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1)
+      openai: 7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1)
       zod: 4.6.1
     transitivePeerDependencies:
       - '@aws-sdk/credential-provider-node'
@@ -4807,9 +4807,9 @@ snapshots:
       - undici
       - ws
 
-  '@langchain/pinecone@1.0.3(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(@pinecone-database/pinecone@5.1.2)':
+  '@langchain/pinecone@1.0.3(@langchain/core@1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3))(@pinecone-database/pinecone@5.1.2)':
     dependencies:
-      '@langchain/core': 1.2.10(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
+      '@langchain/core': 1.2.10(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3)
       '@pinecone-database/pinecone': 5.1.2
       flat: 5.0.2
 
@@ -7193,12 +7193,12 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  langsmith@0.10.2(@opentelemetry/api@1.9.0)(openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3):
+  langsmith@0.10.2(@opentelemetry/api@1.9.0)(openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1))(ws@8.21.3):
     dependencies:
       p-queue: 6.6.2
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
-      openai: 7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1)
+      openai: 7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1)
       ws: 8.21.3
 
   language-subtag-registry@0.3.23: {}
@@ -7678,7 +7678,7 @@ snapshots:
 
   ohash@2.0.11: {}
 
-  openai@7.15.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1):
+  openai@7.19.0(undici@7.29.1)(ws@8.21.3)(zod@4.6.1):
     optionalDependencies:
       undici: 7.29.1
       ws: 8.21.3
