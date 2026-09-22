@@ -302,7 +302,7 @@ Useful resources and dependencies that are used in quill.
 - [@trpc/next](https://www.npmjs.com/package/@trpc/next): ^11.18.0
 - [@trpc/react-query](https://www.npmjs.com/package/@trpc/react-query): ^11.18.0
 - [@trpc/server](https://www.npmjs.com/package/@trpc/server): ^11.18.0
-- [@types/node](https://www.npmjs.com/package/@types/node): ^26.5.1
+- [@types/node](https://www.npmjs.com/package/@types/node): ^26.6.2
 - [@types/pg](https://www.npmjs.com/package/@types/pg): ^8.23.1
 - [@types/react](https://www.npmjs.com/package/@types/react): 19.3.0
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.3.0
