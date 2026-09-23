@@ -15,7 +15,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^4.0.66",
+    "@ai-sdk/openai": "^4.0.71",
     "@hookform/resolvers": "^5.9.1",
     "@kinde-oss/kinde-auth-nextjs": "^2.13.1",
     "@langchain/core": "^1.2.10",
@@ -43,7 +43,7 @@
     "@trpc/server": "^11.18.0",
     "@uploadthing/react": "^7.3.3",
     "@vercel/config": "^0.7.1",
-    "ai": "^7.0.97",
+    "ai": "^7.0.109",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
