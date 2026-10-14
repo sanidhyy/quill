@@ -79,7 +79,7 @@
     "@types/react-dom": "19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.3.4",
-    "postcss": "^8.5.28",
+    "postcss": "^8.5.29",
     "prisma": "^7.10.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6"
