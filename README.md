@@ -320,7 +320,7 @@ Useful resources and dependencies that are used in quill.
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [openai](https://www.npmjs.com/package/openai): ^7.23.0
 - [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^2.4.5
-- [postcss](https://www.npmjs.com/package/postcss): ^8.5.28
+- [postcss](https://www.npmjs.com/package/postcss): ^8.5.29
 - [prisma](https://www.npmjs.com/package/prisma): ^7.10.0
 - [react](https://www.npmjs.com/package/react): 19.3.0
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.3.0
