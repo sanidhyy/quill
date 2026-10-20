@@ -284,7 +284,7 @@ Useful resources and dependencies that are used in quill.
 - [@mantine/hooks](https://www.npmjs.com/package/@mantine/hooks): ^9.7.2
 - [@napi-rs/canvas](https://www.npmjs.com/package/@napi-rs/canvas): ^1.0.9
 - [@pinecone-database/pinecone](https://www.npmjs.com/package/@pinecone-database/pinecone): ^5.1.2
-- [@prisma/adapter-neon](https://www.npmjs.com/package/@prisma/adapter-neon): ^7.10.0
+- [@prisma/adapter-neon](https://www.npmjs.com/package/@prisma/adapter-neon): ^7.10.1
 - [@prisma/client](https://www.npmjs.com/package/@prisma/client): ^7.10.0
 - [@radix-ui/react-alert-dialog](https://www.npmjs.com/package/@radix-ui/react-alert-dialog): ^1.1.23
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.2.6
