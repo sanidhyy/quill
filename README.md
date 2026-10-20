@@ -334,7 +334,7 @@ Useful resources and dependencies that are used in quill.
 - [server-only](https://www.npmjs.com/package/server-only): ^0.0.1
 - [simplebar-react](https://www.npmjs.com/package/simplebar-react): ^3.3.2
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.8
-- [stripe](https://www.npmjs.com/package/stripe): ^22.6.2
+- [stripe](https://www.npmjs.com/package/stripe): ^23.0.0
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.6.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^4.3.3
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
