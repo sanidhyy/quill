@@ -27,8 +27,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(@langchain/core@1.2.12(openai@7.23.0(undici@7.29.1)(zod@4.6.5)))(@pinecone-database/pinecone@5.1.2)
       '@mantine/hooks':
-        specifier: ^9.7.2
-        version: 9.7.2(react@19.3.0)
+        specifier: ^9.7.3
+        version: 9.7.3(react@19.3.0)
       '@napi-rs/canvas':
         specifier: ^1.0.9
         version: 1.0.9
@@ -729,8 +729,8 @@ packages:
       '@langchain/core': ^1.1.47
       '@pinecone-database/pinecone': ^5.0.2
 
-  '@mantine/hooks@9.7.2':
-    resolution: {integrity: sha512-11emsRp/Mg+vfaKVyoMwiMdCHmO/15XOL6JG9fACkclVZnLPBVvRIaDdRBudsR3ALGZ5iTzrArPJDjjoeO6X4w==}
+  '@mantine/hooks@9.7.3':
+    resolution: {integrity: sha512-GMHoMS1qul1dBLIHd/N9ef2Pr8UKYYHfuM+g2ej3gYqU0kH4sTiR9FNHksoTQi0PzATRoaNlUYjjMe9rbDRw5A==}
     peerDependencies:
       react: ^19.2.0
 
@@ -4888,7 +4888,7 @@ snapshots:
       '@pinecone-database/pinecone': 5.1.2
       flat: 5.0.2
 
-  '@mantine/hooks@9.7.2(react@19.3.0)':
+  '@mantine/hooks@9.7.3(react@19.3.0)':
     dependencies:
       react: 19.3.0
 

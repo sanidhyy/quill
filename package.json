@@ -21,7 +21,7 @@
     "@langchain/core": "^1.2.10",
     "@langchain/openai": "^1.5.12",
     "@langchain/pinecone": "^1.0.3",
-    "@mantine/hooks": "^9.7.2",
+    "@mantine/hooks": "^9.7.3",
     "@napi-rs/canvas": "^1.0.9",
     "@pinecone-database/pinecone": "^5.1.2",
     "@prisma/adapter-neon": "^7.10.1",
