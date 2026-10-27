@@ -65,7 +65,7 @@
     "server-only": "^0.0.1",
     "simplebar-react": "^3.3.2",
     "sonner": "^2.0.8",
-    "stripe": "^23.0.0",
+    "stripe": "^23.0.1",
     "tailwind-merge": "^3.6.0",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^7.7.4",
